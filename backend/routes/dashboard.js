@@ -60,7 +60,7 @@ router.post('/:id', (req, res) => {
 				}) 
 			})
 		} else {
-			res.status(200).json({
+			res.status(422).json({
 				message: 'The ID is invalid.'
 			})
 		}				
