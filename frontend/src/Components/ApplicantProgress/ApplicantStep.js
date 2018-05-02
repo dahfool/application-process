@@ -19,8 +19,8 @@ class ApplicantStep extends React.Component {
 	};
 
 	handleReject = () => {
-		const stepIndex = this.props.stepIndex;
-		const applicantId = this.props.applicantId;
+		const stepIndex = this.state.stepIndex;
+		const applicantId = this.state.applicantId;
 		this.props.reject(applicantId, stepIndex);
 	};
 
