@@ -49,7 +49,10 @@ class ApplicantProgress extends React.Component {
     })
 		.then(res => {
 			console.log(res);
-    })
+			let progress = {...this.state.progress}
+			progress[res.index].step_status = 'Approved'
+			this.setState({progress: progress})
+		})
     .catch(error => {
       console.log(error.message);
     });
@@ -63,6 +66,9 @@ class ApplicantProgress extends React.Component {
     })
 		.then(res => {
 			console.log(res);
+			let progress = {...this.state.progress}
+			progress[res.index].step_status = 'Rejected'
+			this.setState({progress})
     })
     .catch(error => {
       console.log(error.message);

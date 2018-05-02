@@ -8,7 +8,8 @@ class ApplicantStep extends React.Component {
 
 		this.state = {
 			stepIndex: this.props.index,
-			applicantId: this.props.id
+			applicantId: this.props.id,
+			verified: false
 		}
 	}
 
@@ -16,12 +17,18 @@ class ApplicantStep extends React.Component {
 		const stepIndex = this.state.stepIndex;
 		const applicantId = this.state.applicantId;
 		this.props.approve(applicantId, stepIndex);
+		this.setState({
+			verified: true
+		})
 	};
 
 	handleReject = () => {
 		const stepIndex = this.state.stepIndex;
 		const applicantId = this.state.applicantId;
 		this.props.reject(applicantId, stepIndex);
+		this.setState({
+			verified: true
+		})
 	};
 
 	render() {
@@ -55,7 +62,7 @@ class ApplicantStep extends React.Component {
 			      </div>
 			      <div className={classnames({
 			      	'block': (status === 'Submitted'),
-			      	'hidden': (status === 'Approved' || status === 'Rejected' || status === undefined)
+			      	'hidden': (status === 'Approved' || status === 'Rejected' || status === undefined || this.state.verified === true)
 			      })}>
 				      <button className='btn-success' onClick={this.handleApprove}> Approve </button>
 				      <button className='btn-danger' onClick={this.handleReject}> Reject </button>
