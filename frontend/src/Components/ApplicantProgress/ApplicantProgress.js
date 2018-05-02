@@ -43,13 +43,12 @@ class ApplicantProgress extends React.Component {
 
 	approveStep = (id, index) => {
 		axios
-		.post(`http://localhost:3001/api/dashboard/${id}/approve`, {
+		.patch(`http://localhost:3001/api/dashboard/${id}/approve`, {
  			status: 'Approved',
  			index: index
     })
 		.then(res => {
 			console.log(res);
-      return res;
     })
     .catch(error => {
       console.log(error.message);
@@ -58,13 +57,12 @@ class ApplicantProgress extends React.Component {
 
 	rejectStep = (id, index) => {
 		axios
-		.post(`http://localhost:3001/api/dashboard/${id}/reject`, {
+		.patch(`http://localhost:3001/api/dashboard/${id}/reject`, {
  			status: 'Rejected',
  			index: index
     })
 		.then(res => {
 			console.log(res);
-      return res;
     })
     .catch(error => {
       console.log(error.message);

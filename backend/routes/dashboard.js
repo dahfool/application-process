@@ -48,7 +48,7 @@ router.get('/steps/all', (req,res) => {
 	});
 });
 
-router.post('/:id/approve', (req, res) => {
+router.patch('/:id/approve', (req, res) => {
 	console.log(req.body);
 	db.run(`UPDATE steps
 					SET step_status = 'Approved'
@@ -60,7 +60,7 @@ router.post('/:id/approve', (req, res) => {
 					})
 });
 
-router.post('/:id/reject', (req, res) => {
+router.patch('/:id/reject', (req, res) => {
 	db.run(`UPDATE steps
 					SET step_status = 'Rejected'
 					WHERE applicant_id = ? AND step_number = ?`, [req.params.id, req.body.index],
