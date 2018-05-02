@@ -50,7 +50,7 @@ router.get('/applicant/:id', function (req, res, next) {
 })
 
 // INSERT URL TO TABLE STEP 
-router.post('/:id', (req, res) => {
+router.post('/:id', (req, res, next) => {
 	let sql = `INSERT INTO steps (applicant_id, step_number, step_status, url) VALUES (?, ?, ?, ?)`;
 	if(Number.isInteger(Number(req.params.id))) {
 		db.run(sql,[Number(req.params.id), Number(req.body.step_number), req.body.step_status, req.body.url],
@@ -67,7 +67,7 @@ router.post('/:id', (req, res) => {
 	})
 
 // FETCH ALL ROWS FROM TABLE STEPS
-router.get('/steps/all', (req,res) => {
+router.get('/steps/all', (req, res, next) => {
 	let sql = 'select * from steps';
 	db.all(sql, [], (err, rows) => {
 		res.status(200).json({
