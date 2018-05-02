@@ -25,6 +25,7 @@ router.get('/:id', function (req, res, next) {
 	let sql = 'select * from applicants where id = ?'; 
 	if (Number.isInteger(Number(req.params.id))) {
  	db.all(sql, [Number(req.params.id)], (err, rows) => {
+		 console.log(rows.length)
 		if(rows.length === 1){
 			res.status(200).json({
 				applicants: rows
@@ -33,11 +34,7 @@ router.get('/:id', function (req, res, next) {
 			res.status(404).json({
 				message: 'This applicant doesn\'t exist.'
 			})
-		} if(err){
-			res.json({
-				message: err.message
-			})
-		}	 
+		} 
 	})} else {
 		res.status(404).json({
 			message: 'Page Not Found'
