@@ -5,15 +5,31 @@ import classnames from 'classnames';
 class ApplicantStep extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			stepIndex: this.props.index,
+			applicantId: this.props.id
+		}
 	}
 
+	handleApprove = () => {
+		const stepIndex = this.state.stepIndex;
+		const applicantId = this.state.applicantId;
+		this.props.approve(applicantId, stepIndex);
+	};
+
+	handleReject = () => {
+		const stepIndex = this.props.stepIndex;
+		const applicantId = this.props.applicantId;
+		this.props.reject(applicantId, stepIndex);
+	};
+
 	render() {
-		const { details, stepNumber, progress, index } = this.props;
+		const { details, stepNumber, progress, index} = this.props;
 		let link;
 		let status;
 		let reviewBlock;
 		let linkBlock;
-
 		if (progress.length > 0) {
 			progress.map(step => {
 		    if (step.step_number === index) {
@@ -41,8 +57,8 @@ class ApplicantStep extends React.Component {
 			      	'block': (status === 'Submitted'),
 			      	'hidden': (status === 'Approved' || status === 'Rejected' || status === undefined)
 			      })}>
-				      <button className='btn-success' > Approve </button>
-				      <button className='btn-danger' > Reject </button>
+				      <button className='btn-success' onClick={this.handleApprove}> Approve </button>
+				      <button className='btn-danger' onClick={this.handleReject}> Reject </button>
 			      </div>
 		      </div>   
 	    );

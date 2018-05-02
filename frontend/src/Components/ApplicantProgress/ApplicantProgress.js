@@ -2,6 +2,7 @@ import React from 'react';
 import helpers from '../../helpers'
 import ApplicantStep from './ApplicantStep';
 import './ApplicantProgress.css';
+import axios from 'axios';
 
 class ApplicantProgress extends React.Component {
 	constructor(props) {
@@ -40,6 +41,36 @@ class ApplicantProgress extends React.Component {
 		.catch(err => console.log(err))
 	}
 
+	approveStep = (id, index) => {
+		axios
+		.post(`http://localhost:3001/api/dashboard/${id}/approve`, {
+ 			status: 'Approved',
+ 			index: index
+    })
+		.then(res => {
+			console.log(res);
+      return res;
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+	}
+
+	rejectStep = (id, index) => {
+		axios
+		.post(`http://localhost:3001/api/dashboard/${id}/reject`, {
+ 			status: 'Rejected',
+ 			index: index
+    })
+		.then(res => {
+			console.log(res);
+      return res;
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+	}
+
 	render() {
 		const data = this.state.applicantData;
 		return (
@@ -59,7 +90,7 @@ class ApplicantProgress extends React.Component {
 				<section className='applicant-progress'>
 					<h3> Progress </h3>
 					{helpers.stepsArray.map((step, i) => (
-						<ApplicantStep stepNumber={step.step} details={step.details} key={i} progress={this.state.progress} index={i}/>
+						<ApplicantStep stepNumber={step.step} details={step.details} key={i} progress={this.state.progress} index={i} approve={this.approveStep} reject={this.rejectStep} id={this.state.id}/>
 					))}
 				</section>
 			</div>
