@@ -1,30 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Status from './Status';
 
 class ApplicantItem extends React.Component {
 	constructor (props) {
 		super(props);
 
-		this.state = {
-			actualSteps: [],
-			stepsProgress: {0: 'Approved', 1: '', 2: '', 3: '', 4: '', 5: ''}
-		}
-	}
-
-	componentDidMount() {
-		this.saveActualSteps(this.props.id);
-		console.log('state', this.state);
-		console.log('props', this.props);
+		// this.state = {
+		// 	actualSteps: [],
+		// 	stepsProgress: {0: 'Approved', 1: '', 2: '', 3: '', 4: '', 5: ''}
+		// }
 	}
 
 	saveActualSteps = (id) => {
-		console.log('steps', this.props.steps);
-		this.props.steps.map(step => {
-			if(id === step.applicant_id) {
-				this.state.actualSteps.push(step);
-			}
-		console.log('actual steps', this.state.actualSteps)
-		})
+		const steps = this.props.steps;
+		const actualSteps = steps.filter(step => step.applicant_id === id);
+		return actualSteps;
 	}
 
 	// saveProgress = (id) => {
@@ -36,8 +27,10 @@ class ApplicantItem extends React.Component {
  //    }
 
   render () {
+  const actualSteps = this.saveActualSteps(this.props.id);
+
   const {data} = this.props;
-  const progress = this.state.stepsProgress;
+  // const progress = this.state.stepsProgress;
 		return(
 			<tr>
 				<td><Link to={`/applicants/${data.id}`}>{data.fullName}</Link></td>
@@ -46,11 +39,11 @@ class ApplicantItem extends React.Component {
 				<td>{data.experience}</td>
 				<td>{data.itAccess ? 'yes' : 'no'}</td>
 				<td> Approved </td>
-				<td> {progress[1]} </td>
-				<td> {progress[2]} </td>
-				<td> {progress[3]} </td>
-				<td> {progress[4]} </td>
-				<td> {progress[5]} </td>
+				<Status actualSteps={actualSteps} stepNumber={1}> </Status>
+				<Status actualSteps={actualSteps} stepNumber={2}> </Status>
+				<Status actualSteps={actualSteps} stepNumber={3}> </Status>
+				<Status actualSteps={actualSteps} stepNumber={4}> </Status>
+				<Status actualSteps={actualSteps} stepNumber={5}> </Status>
 			</tr>
 		)
 	}
