@@ -2,7 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
-const FormSubmittedMessage = ({ submitted, hideThankyouMessage, fullName, email, id }) => {
+const FormSubmittedMessage = ({ submitted, hideThankyouMessage, fullName, email, id, status }) => {
+  let message;
+  if(status === 1) {
+    message = (
+          <div>
+            <p className='link-message'> Here is a link to your dashboard: <Link to={`/applicant-dashboard/${id}`} onClick={hideThankyouMessage}> Click here! </Link></p>
+            <p className='important-message'> <b>Important!</b> Copy and save this link to access your dashboard in the future </p>
+          </div>
+        );
+  } else {
+      message = <p className='important-message'> We will contact you soon.</p>
+  }
   return (
     <div className={classnames('container text-center', {
       'block': (submitted === true),
@@ -22,8 +33,7 @@ const FormSubmittedMessage = ({ submitted, hideThankyouMessage, fullName, email,
       <p className='pt-4 pb-3 display-5 thanks-message'>
         Your detail have been submitted sucessfully.
       </p>
-      <p className='link-message'> Here is a link to your dashboard: <Link to={`/applicant-dashboard/${id}`} onClick={hideThankyouMessage}> Click here! </Link></p>
-      <p className='important-message'> <b>Important!</b> Copy and save this link to access your dashboard in the future </p>
+        {message}
     </div>
   );
 };
