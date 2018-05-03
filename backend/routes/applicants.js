@@ -31,13 +31,13 @@ router.get('/:id', function (req, res, next) {
 				applicants: rows
 			});
 		} else {
-			res.status(404).json({
+			res.status(200).json({
 				message: 'This applicant doesn\'t exist.'
 			})
 		} 
 	})} else {
-		res.status(404).json({
-			message: 'Page Not Found'
+		res.status(200).json({
+			message: 'Please check applicant ID'
 		})
 	}
 });
