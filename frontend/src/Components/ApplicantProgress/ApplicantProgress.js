@@ -48,9 +48,12 @@ class ApplicantProgress extends React.Component {
  			index: index
     })
 		.then(res => {
-			console.log(res);
-			let progress = {...this.state.progress}
-			progress[res.index].step_status = 'Approved'
+			const progress = this.state.progress;
+			progress.map(item => {
+				if (item.step_number === index) {
+					item.step_status = 'Approved'
+				}
+			})
 			this.setState({progress: progress})
 		})
     .catch(error => {
@@ -65,10 +68,13 @@ class ApplicantProgress extends React.Component {
  			index: index
     })
 		.then(res => {
-			console.log(res);
-			let progress = {...this.state.progress}
-			progress[res.index].step_status = 'Rejected'
-			this.setState({progress})
+			const progress = this.state.progress;
+			progress.map(item => {
+				if (item.step_number === index) {
+					item.step_status = 'Rejected'
+				}
+			})
+			this.setState({progress: progress})
     })
     .catch(error => {
       console.log(error.message);

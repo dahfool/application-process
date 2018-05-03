@@ -56,6 +56,8 @@ router.patch('/:id/approve', (req, res) => {
 					function(err) {
 						if (err) {
 							console.log(err.message);
+						} else {
+							res.status(200).send('sucess');
 						}
 					})
 });
@@ -67,6 +69,8 @@ router.patch('/:id/reject', (req, res) => {
 					function(err) {
 						if (err) {
 							console.log(err.message);
+						} else {
+							res.status(200).send('success');
 						}
 					})
 });
