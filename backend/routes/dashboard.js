@@ -14,22 +14,11 @@ router.get('/:id', function (req, res, next) {
 	let sql = 'select * from steps where applicant_id = ?'; 
 	if (Number.isInteger(Number(req.params.id))) {
  	db.all(sql, [Number(req.params.id)], (err, rows) => {
-		if(rows.length <= 0){
-			res.status(404).json({
-				steps: 'This id doesn\'t exist.'
+		res.status(200).json({
+			data: rows
 			});
-		}else {
-			res.status(200).json({
-				data: rows
-				});
-		}
-
-	})
-}  else {
-	res.status(200).json({
-		message: 'The ID is invalid.'
-	})
-} 	
+		})
+	}  
 });
 
 // JOIN APPLICANT  TABLE TO ALL HIS STEPS THROUGH APPLICANT ID
