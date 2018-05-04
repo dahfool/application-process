@@ -1,16 +1,15 @@
 const router = require('express').Router();
 const sqlite = require('sqlite3').verbose();
-
 const filename = './database/db.sqlite';
 let db = new sqlite.Database(filename, (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Connected to the in-memory application database.');
+	if (err) {
+		return console.error(err.message);
+	}
+	console.log('Connected to the in-memory application database.');
 });
 
 //GET ALL APPLICANTS
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
 	let sql = 'select * from applicants';
 	db.all(sql, [], (err, rows) => {
 		res.status(200).json({
@@ -19,24 +18,24 @@ router.get('/', (req, res, next) => {
 	});
 });
 
-
 // get one applicant through his id
-router.get('/:id', function (req, res, next) {  
-	let sql = 'select * from applicants where id = ?'; 
-	if (Number.isInteger(Number(req.params.id))) {
- 	db.all(sql, [Number(req.params.id)], (err, rows) => {
-		 console.log(rows.length)
-		if(rows.length === 1){
-			res.status(200).json({
-				applicants: rows
-			});
-		} else {
-			res.status(200).json({
-				message: 'This applicant doesn\'t exist.'
-			})
-		} 
-	})} else {
-		res.status(200).json({
+router.get('/:id', function (req, res, next) {
+	let sql = 'select * from applicants where id = ?';
+	const myId = Number(req.params.id);
+	if (Number.isInteger(myId)) {
+		db.all(sql, [myId], (err, rows) => {
+			if (rows.length === 1) {
+				res.status(200).json({
+					applicants: rows
+				});
+			} else {
+				res.status(404).json({
+					message: 'This applicant doesn\'t exist.'
+				})
+			}
+		})
+	} else {
+		res.status(422).json({
 			message: 'Please check applicant ID'
 		})
 	}
@@ -44,26 +43,23 @@ router.get('/:id', function (req, res, next) {
 
 // ADD NEW APPLICANT && STEP 0
 router.post('/', (req, res, next) => {
-	const { fullName, email, city, tel, status, country, experience, itAccess, hearAbout } = req.body;
-	// check and  insert data only if status = 1 or 0
-	if(Number.isInteger(Number(status)) && (Number(status) === 1 || Number(status) ===  0)){
+	const {
+		fullName, email, city, tel, country, experience, itAccess, hearAbout
+	} = req.body;
+	const myStatus = Number(req.body.status)
+		// check and  insert data only if status = 1 or 0
+	if (Number.isInteger(myStatus) && (myStatus === 1 || myStatus === 0)) {
 		db.run(`INSERT INTO applicants
 			(fullName, email, city, tel, status, country, experience, itAccess, hearAbout)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
-					[fullName, email, city, tel, Number(status), country, experience, itAccess, hearAbout], function(err) {
-					 res.status(201).json({
-							id: this.lastID,
-					})
-	}); 
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [fullName, email, city, tel, myStatus, country, experience, itAccess, hearAbout], function (err) {
+			res.status(201).json({
+				id: this.lastID,
+			})
+		});
 	} else {
 		res.status(422).json({
-			status: 'This applicant is not refugee or asylum seeker!'
-	})
+			status: 'This applicant is not eligible.'
+		})
 	}
-
 });
-
-
-
-
-module.exports = router ;
+module.exports = router;
