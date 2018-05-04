@@ -68,6 +68,7 @@ router.post("/", (req, res) => {
       } else {
         //send email
         var applicantEmail = req.body.email;
+        var applicantName = req.body.fullName;
         var transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
@@ -80,7 +81,9 @@ router.post("/", (req, res) => {
           from: "cfyapplicationprocess@email.com", // sender address
           to: applicantEmail, // list of receivers
           subject: "Message From: Code Your Future", // Subject line
-					html: `Message from Code Your Future Admission Department. Link to access your dashboard is:  http://localhost:3000/applicant-dashboard/${this.lastID}`
+          html: `Dear ${applicantName}, <br /> Thank you for your interest to join Code Your Future's coding course. 
+					Please follow the link to get on with your application process.
+					<br /> Link -  http://localhost:3000/applicant-dashboard/${this.lastID}`
         };
 
         transporter.sendMail(mailOptions, function(err, info) {
@@ -96,5 +99,3 @@ router.post("/", (req, res) => {
 });
 
 module.exports = router;
-	
-
