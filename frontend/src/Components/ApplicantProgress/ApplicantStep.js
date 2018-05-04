@@ -58,7 +58,10 @@ class ApplicantStep extends React.Component {
 				    <div>
 				      <p> <b>{details}</b> </p>
 				      {linkBlock}
-				      <p className={link ? 'block' : 'hidden'}> Status: {status} </p>
+				      <p className={link ? 'block' : 'hidden'}> Status: <b className={classnames({
+				      	'status-approved': (status === 'Approved'),
+				      	'status-rejected': (status === 'Rejected')
+				      })}>{status}</b> </p>
 			      </div>
 			      <div className={classnames({
 			      	'block': (status === 'Submitted'),
@@ -73,7 +76,7 @@ class ApplicantStep extends React.Component {
 			reviewBlock = (
 				<div>
 					<p> <b>{details}</b> </p>
-					<p> Approved </p>
+					<p> Status: <b className='status-approved'> Approved</b> </p>
 				</div>
 			)
 		}
