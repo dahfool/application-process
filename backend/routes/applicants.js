@@ -79,7 +79,7 @@ router.post("/", (req, res) => {
         const mailOptions = {
           from: "cfyapplicationprocess@email.com", // sender address
           to: applicantEmail, // list of receivers
-          subject: "Code Your Future", // Subject line
+          subject: "Message From: Code Your Future", // Subject line
 					html: `Message from Code Your Future Admission Department. Link to access your dashboard is:  http://localhost:3000/applicant-dashboard/${this.lastID}`
         };
 
