@@ -12,6 +12,9 @@ let db = new sqlite.Database(filename, (err) => {
 router.get('/', (req, res) => {
 	let sql = 'select * from applicants';
 	db.all(sql, [], (err, rows) => {
+		if (err) {
+			return console.log(err.message);
+		}
 		res.status(200).json({
 			applicants: rows
 		});
@@ -24,6 +27,9 @@ router.get('/:id', function (req, res, next) {
 	const myId = Number(req.params.id);
 	if (Number.isInteger(myId)) {
 		db.all(sql, [myId], (err, rows) => {
+			if (err) {
+				return console.log(err.message);
+			}
 			if (rows.length === 1) {
 				res.status(200).json({
 					applicants: rows
@@ -52,6 +58,9 @@ router.post('/', (req, res, next) => {
 		db.run(`INSERT INTO applicants
 			(fullName, email, city, tel, status, country, experience, itAccess, hearAbout)
 			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [fullName, email, city, tel, myStatus, country, experience, itAccess, hearAbout], function (err) {
+			if (err) {
+				return console.log(err.message);
+			}
 			res.status(201).json({
 				id: this.lastID,
 			})

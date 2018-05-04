@@ -15,6 +15,9 @@ router.get('/:id', function(req, res, next) {
 	let sql = 'select * from steps where applicant_id = ?';
 	if (Number.isInteger(myId)) {
 		db.all(sql, [myId], (err, rows) => {
+			if (err) {
+				return console.error(err.message);
+			}
 			res.status(200).json({
 				data: rows
 			});
@@ -36,6 +39,9 @@ router.post('/:id', (req, res, next) => {
 	if (Number.isInteger(myId)) {
 		db.run(sql, [myId, step_numb, step_status, url],
 			function(err) {
+				if (err) {
+					return console.error(err.message);
+				}
 				res.status(201).json({
 					id: this.lastID
 				})
@@ -51,6 +57,9 @@ router.post('/:id', (req, res, next) => {
 router.get('/steps/all', (req, res, next) => {
 	let sql = 'select * from steps';
 	db.all(sql, [], (err, rows) => {
+		if (err) {
+			return console.error(err.message);
+		}
 		res.status(200).json({
 			steps: rows
 		});
