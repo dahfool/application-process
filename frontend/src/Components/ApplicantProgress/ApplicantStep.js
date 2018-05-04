@@ -9,7 +9,7 @@ class ApplicantStep extends React.Component {
 		this.state = {
 			stepIndex: this.props.index,
 			applicantId: this.props.id,
-			verified: false
+			verified: ''
 		}
 	}
 
@@ -18,7 +18,7 @@ class ApplicantStep extends React.Component {
 		const applicantId = this.state.applicantId;
 		this.props.approve(applicantId, stepIndex);
 		this.setState({
-			verified: true
+			verified: 'Approved'
 		})
 	};
 
@@ -27,7 +27,7 @@ class ApplicantStep extends React.Component {
 		const applicantId = this.state.applicantId;
 		this.props.reject(applicantId, stepIndex);
 		this.setState({
-			verified: true
+			verified: 'Rejected'
 		})
 	};
 
@@ -37,6 +37,7 @@ class ApplicantStep extends React.Component {
 		let status;
 		let reviewBlock;
 		let linkBlock;
+		let verified = this.state.verified;
 		if (progress.length > 0) {
 			progress.map(step => {
 		    if (step.step_number === index) {
@@ -63,12 +64,17 @@ class ApplicantStep extends React.Component {
 				      	'status-rejected': (status === 'Rejected')
 				      })}>{status}</b> </p>
 			      </div>
-			      <div className={classnames({
-			      	'block': (status === 'Submitted'),
-			      	'hidden': (status === 'Approved' || status === 'Rejected' || status === undefined || this.state.verified === true)
-			      })}>
-				      <button className='btn-success' onClick={this.handleApprove}> Approve </button>
-				      <button className='btn-danger' onClick={this.handleReject}> Reject </button>
+			      <div>
+			      	<p className={verified ? 'block' : 'hidden'}>
+			      	 {(verified === 'Approved') ? 'Approved successfully!' : 'Rejected successfully!'}
+			      	 </p>
+				      <div className={classnames({
+				      	'block': (status === 'Submitted'),
+				      	'hidden': (status === 'Approved' || status === 'Rejected' || status === undefined || this.state.verified === true)
+				      })}>
+					      <button className='btn-success' onClick={this.handleApprove}> Approve </button>
+					      <button className='btn-danger' onClick={this.handleReject}> Reject </button>
+				      </div>
 			      </div>
 		      </div>   
 	    );
