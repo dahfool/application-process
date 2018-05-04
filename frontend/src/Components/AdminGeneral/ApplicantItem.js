@@ -5,11 +5,6 @@ import Status from './Status';
 class ApplicantItem extends React.Component {
 	constructor (props) {
 		super(props);
-
-		// this.state = {
-		// 	actualSteps: [],
-		// 	stepsProgress: {0: 'Approved', 1: '', 2: '', 3: '', 4: '', 5: ''}
-		// }
 	}
 
 	saveActualSteps = (id) => {
@@ -18,19 +13,10 @@ class ApplicantItem extends React.Component {
 		return actualSteps;
 	}
 
-	// saveProgress = (id) => {
-	// 	console.log(this.props)
-	// 		console.log(this.props.id);
-	//       // let stepsProgress = {...this.state.stepsProgress}
-	//       // stepsProgress[index] = step.step_status
-	//       // this.setState ({ stepsProgress });
- //    }
-
   render () {
   const actualSteps = this.saveActualSteps(this.props.id);
 
   const {data} = this.props;
-  // const progress = this.state.stepsProgress;
 		return(
 			<tr>
 				<td><Link to={`/applicants/${data.id}`}>{data.fullName}</Link></td>

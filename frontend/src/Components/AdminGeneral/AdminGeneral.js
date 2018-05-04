@@ -52,24 +52,32 @@ class AdminGeneral extends React.Component {
       />
       ));
     return (
-      <table className="applicants-table table-bordered">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>City</th>
-            <th>Refugee</th>
-            <th>Experience</th>
-            <th>IT Access</th>
-            <th>Step 0 </th>
-            <th>Step 1 </th>
-            <th>Step 2 </th>
-            <th>Step 3 </th>
-            <th>Step 4 </th>
-            <th>Step 5 </th>
-          </tr>
-        </thead>
-        <tbody>{applicantsList}</tbody>
-      </table>
+      <section>
+        <h5> Step Status: </h5>
+        <ul>
+          <li> <b className='status-submitted'>S</b> - Submitted - Review required</li>
+          <li> <b className='status-approved'>A</b> - Approved</li>
+          <li> <b className='status-rejected'>R</b> - Rejected - Waiting for re-submission</li>
+        </ul>
+        <table className="applicants-table table-bordered">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>City</th>
+              <th>Refugee</th>
+              <th>Experience</th>
+              <th>IT Access</th>
+              <th>Step 0 </th>
+              <th>Step 1 </th>
+              <th>Step 2 </th>
+              <th>Step 3 </th>
+              <th>Step 4 </th>
+              <th>Step 5 </th>
+            </tr>
+          </thead>
+          <tbody>{applicantsList}</tbody>
+        </table>
+      </section>
     );
   }
 }
