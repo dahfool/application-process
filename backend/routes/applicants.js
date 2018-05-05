@@ -81,9 +81,9 @@ router.post("/", (req, res) => {
           from: "cfyapplicationprocess@email.com", // sender address
           to: applicantEmail, // list of receivers
           subject: "Message From: Code Your Future", // Subject line
-          html: `Dear ${applicantName}, <br /> Thank you for your interest to join Code Your Future's coding course. 
-					Please follow the link to get on with your application process.
-					<br /> Link -  http://localhost:3000/applicant-dashboard/${this.lastID}`
+          html: `Dear ${applicantName}, <br /> <br /> Thank you for your interest to join Code Your Future's coding course. 
+					Please follow the link to get on with your application.
+					<br /><br /> Link -  http://localhost:3000/applicant-dashboard/${this.lastID} <br /> <br /> Regards, <br /> CYF Admission Team`
         };
 
         transporter.sendMail(mailOptions, function(err, info) {
