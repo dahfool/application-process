@@ -49,7 +49,6 @@ router.get('/steps/all', (req,res) => {
 });
 
 router.patch('/:id/approve', (req, res) => {
-	console.log(req.body);
 	db.run(`UPDATE steps
 					SET step_status = 'Approved'
 					WHERE applicant_id = ? AND step_number = ?`, [req.params.id, req.body.index],
