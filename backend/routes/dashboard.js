@@ -57,7 +57,7 @@ router.post("/:id", (req, res) => {
 						Student ID: ${req.params.id} <br /> Step submitted: step ${
             req.body.step_number
           } <br /> 
-						Student url: http://localhost:3000/applicant-dashboard/${req.params.id}`
+						Student url: http://localhost:3000/applicants/${req.params.id}`
         };
 
         transporter.sendMail(mailOptions, function(err, info) {
