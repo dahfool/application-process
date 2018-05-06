@@ -66,7 +66,8 @@ router.post("/", (req, res) => {
       if (err) {
         return res.send("400 - BAD REQUEST").status(400);
       } else {
-        //send email
+
+        //send email to applicant
         var applicantEmail = req.body.email;
         var applicantName = req.body.fullName;
         var transporter = nodemailer.createTransport({
@@ -78,7 +79,7 @@ router.post("/", (req, res) => {
         });
 
         const mailOptions = {
-          from: "cfyapplicationprocess@email.com", // sender address
+          from: "cyfapplicationprocess@gmail.com", // sender address
           to: applicantEmail, // list of receivers
           subject: "Message From: Code Your Future", // Subject line
           html: `Dear ${applicantName}, <br /> <br /> Thank you for your interest to join Code Your Future's coding course. 
