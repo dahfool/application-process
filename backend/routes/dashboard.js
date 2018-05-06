@@ -54,7 +54,7 @@ router.post("/:id", (req, res) => {
           to: "cyfapplicationprocess@gmail.com", // receivers
           subject: "Student Notification", // Subject line
           html: `Notification: The following student has updated his/her dashboard. <br /> <br /> 
-						Student ID: step ${req.params.id} <br /> Step submitted: ${
+						Student ID: ${req.params.id} <br /> Step submitted: step ${
             req.body.step_number
           } <br /> 
 						Student url: http://localhost:3000/applicant-dashboard/${req.params.id}`
