@@ -15,7 +15,7 @@
 	margin-bottom: 1rem;
 }
 
-.dashboard-step small {
+.block small {
 	color:#ee0402!important;
 	font-size: 85%;
     font-weight: 600;
@@ -27,4 +27,41 @@
 
 .block {
 	display: block;
+}
+
+.step-overview {
+	border-bottom: 3px solid #711b1b;
+    padding: 1.3rem 0;
+}
+
+.step-overview p {
+	margin-bottom: -22px;
+	font-size: 1.5rem;
+}
+.card-head {
+	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
+	height: 10px;
+}
+
+.card-dashboard {
+	height: 72px;
+    background: #bbb;
+    line-height: 2rem;
+    padding: 0 10px;
+}
+
+.card-dashboard h4 {
+	text-align: center;
+    line-height: 4rem;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card-title {
+	display: flex;
+}
+
+.card-title h3 {
+	padding-left: 45px;
+    line-height: 65px;
 }
