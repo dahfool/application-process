@@ -90,7 +90,6 @@ class ApplicantDashboard extends Component {
         })
         .then(res => {
           console.log(JSON.parse(res.config.data));
-          this.getProgress(this.state.id);
           this.setState({
             steps,
             progress: JSON.parse(res.config.data),
