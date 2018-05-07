@@ -55,7 +55,6 @@ const DashboardStep = ({
             {stepHeading}
           </Link>
         )}
-        direct link here
         {submitBlock}
       </section>
       <StatusMessage status={status} stepNumber={step.step} />

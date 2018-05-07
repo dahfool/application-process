@@ -6,6 +6,7 @@ const submitField = props => {
   return (
     <Fragment>
       <form onSubmit={props.submit} className='submit-url'>
+      direct link here
         <div className={props.status ? 'hidden' : 'block'}>
           <input
             required
