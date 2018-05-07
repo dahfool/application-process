@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 
 const submitField = props => {
+  console.log(props.step.details)
+  
   return (
     <Fragment>
-      <form onSubmit={props.submit}>
+      <form onSubmit={props.submit} className='submit-url'>
         <div className={props.status ? 'hidden' : 'block'}>
           <input
             required
@@ -16,7 +18,7 @@ const submitField = props => {
           <button className="btn btn-secondary" type="submit">
             Submit step
           </button>
-          <small id="emailHelp" className="form-text text-muted">
+          <small id="emailHelp" className="form-text">
             {props.alert}
           </small>
         </div>
