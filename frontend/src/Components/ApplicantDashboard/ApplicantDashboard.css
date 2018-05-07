@@ -15,8 +15,8 @@
 	margin-bottom: 1rem;
 }
 
-.block small {
-	color:#ee0402!important;
+.submit-url .form-text {
+	color:#ee0402;
 	font-size: 85%;
     font-weight: 600;
 }
@@ -47,7 +47,9 @@
 	height: 72px;
     background: #bbb;
     line-height: 2rem;
-    padding: 0 10px;
+	padding: 0 10px;
+	margin-top: 10px;
+    margin-left: 10px;
 }
 
 .card-dashboard h4 {
@@ -59,9 +61,22 @@
 
 .card-title {
 	display: flex;
+	align-items: center;
 }
 
 .card-title h3 {
 	padding-left: 45px;
     line-height: 65px;
+}
+
+.dashboard-name {
+	display: flex;
+}
+
+.dashboard-step h4:last-child {
+	padding-left: 2rem;
+}
+
+.dashboard-step a:hover {
+	text-decoration: none;
 }
