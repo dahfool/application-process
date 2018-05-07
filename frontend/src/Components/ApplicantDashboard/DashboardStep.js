@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StatusMessage from './StatusMessage';
 import SubmitField from './SubmitField';
+import StatusMessage from './StatusMessage';
 
 const DashboardStep = ({
   step,
@@ -26,23 +26,23 @@ const DashboardStep = ({
   if (step.step !== 0) {
     submitBlock = (
       <SubmitField
-        status={status}
         step={step}
         addUrl={addUrl}
         alert={alert}
         submit={submit}
         progress={progress}
         index={index}
+        status={status}
       />
     );
   }
 
   const stepHeading = (
-    <div className="card-body">
-      <h3 className="card-title">Step {step.step}</h3>
-      <p>
+    <div className="card-body dashboard-name">
+      <h4 className="card-title">Step {step.step}</h4>
+      <h4>
         <b>{step.details}</b>
-      </p>
+      </h4>
     </div>
   );
   return (
@@ -55,9 +55,10 @@ const DashboardStep = ({
             {stepHeading}
           </Link>
         )}
+        direct link here
         {submitBlock}
-        <StatusMessage status={status} stepNumber={step.step} />
       </section>
+      <StatusMessage status={status} stepNumber={step.step} />
     </div>
   );
 };
