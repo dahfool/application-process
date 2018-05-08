@@ -9,6 +9,7 @@ class AdminGeneral extends React.Component {
 
     this.state = {
       applicants: [],
+      steps: []
     };
   }
 
