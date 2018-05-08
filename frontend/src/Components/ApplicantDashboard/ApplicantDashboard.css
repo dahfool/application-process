@@ -10,6 +10,10 @@
 	color: blue;
 }
 
+.msg-rejected {
+	color: red;
+}
+
 .dashboard-step {
 	border-top: 1px solid grey;
 	margin-bottom: 1rem;

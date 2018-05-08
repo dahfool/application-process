@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import './ApplicantDashboard.css';
 
 const StatusMessage = ({ status, stepNumber }) => {
 	if (stepNumber === 0) {
@@ -13,12 +14,13 @@ const StatusMessage = ({ status, stepNumber }) => {
 				<span>Status: 
 					<b className={classnames({
 					'msg-approved': (status === 'Approved'),
-					'msg-reject': (status === 'Reject'),
+					'msg-rejected': (status === 'Rejected'),
 					'msg-submitted': (status === 'Submitted'),
 					'msg-unsubmitted': (status === false)
 						})}
 					> {status ? status : 'Not submitted'}
 					</b>
+					<p className={status === 'Rejected' ? 'block' : 'hidden'}> Your work was rejected because it didn't meet all of the requirements. Please, contact Administrator admin@mail.com to get the feedback, make some changes and re-submit the step! Good luck! </p>
 				</span>
 				);
 		}

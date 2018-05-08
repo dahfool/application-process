@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import classnames from 'classnames';
 
 const submitField = props => {
   console.log(props.step.details)
@@ -7,7 +8,10 @@ const submitField = props => {
     <Fragment>
       <form onSubmit={props.submit} className='submit-url'>
       direct link here
-        <div className={props.status ? 'hidden' : 'block'}>
+      <div className={classnames({
+        'hidden': (props.status === 'Approved' || props.status === 'Submitted'),
+        'block': (props.status === 'Rejected' || props.status === undefined)
+      })}>
           <input
             required
             type="text"

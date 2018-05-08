@@ -2,16 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SubmitField from './SubmitField';
 import StatusMessage from './StatusMessage';
+import classnames from 'classnames';
 
-const DashboardStep = ({
-  step,
-  addUrl,
-  submit,
-  alert,
-  index,
-  progress,
-  id,
-}) => {
+const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id }) => {
   let submitBlock;
   let status;
   if (progress.length > 0) {
