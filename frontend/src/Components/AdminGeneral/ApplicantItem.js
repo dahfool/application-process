@@ -24,7 +24,7 @@ class ApplicantItem extends React.Component {
 				<td className={data.status ? 'sucess' : 'danger'}>{data.status ? 'yes' : 'no'}</td>
 				<td>{data.experience}</td>
 				<td>{data.itAccess ? 'yes' : 'no'}</td>
-				<td> Approved </td>
+				<td> <b className='msg-approved'> A </b> </td>
 				<Status actualSteps={actualSteps} stepNumber={1}> </Status>
 				<Status actualSteps={actualSteps} stepNumber={2}> </Status>
 				<Status actualSteps={actualSteps} stepNumber={3}> </Status>
