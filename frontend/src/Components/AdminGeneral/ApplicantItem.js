@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Status from './Status.js';
 
 const ApplicantItem = ({data}) => {
 	return(
