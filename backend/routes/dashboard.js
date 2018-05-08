@@ -13,7 +13,6 @@ let db = new sqlite.Database(filename, (err) => {
 router.get('/:id', function(req, res, next) {
 	const myId = Number(req.params.id);
 	let sql = 'select * from steps where applicant_id = ?';
-	if (Number.isInteger(myId)) {
 		db.all(sql, [myId], (err, rows) => {
 			if (err) {
 				return console.error(err.message);
@@ -22,11 +21,6 @@ router.get('/:id', function(req, res, next) {
 				data: rows
 			});
 		})
-	} else {
-		res.status(422).json({
-			message: 'Please check applicant ID'
-		})
-	}
 });
 
 
