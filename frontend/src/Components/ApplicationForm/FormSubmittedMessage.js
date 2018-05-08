@@ -7,8 +7,12 @@ const FormSubmittedMessage = ({ submitted, hideThankyouMessage, fullName, email,
   if(status === 1) {
     message = (
           <div>
-            <p className='link-message'> Here is a link to your dashboard: <Link to={`/applicant-dashboard/${id}`} onClick={hideThankyouMessage}> Click here! </Link></p>
-            <p className='important-message'> <b>Important!</b> Copy and save this link to access your dashboard in the future </p>
+            <p>
+              We have sent you an email to {email} with the link of your dashboard for you to get on with the application process. Please check your email.
+            </p>
+            <p>
+              Please make a note of that link somewhere as you will require it to access your dashboard in future.
+            </p>
           </div>
         );
   } else {
