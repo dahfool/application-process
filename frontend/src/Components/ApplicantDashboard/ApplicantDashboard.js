@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import DashboardStep from './DashboardStep';
 import axios from 'axios';
-import helpers from '../../helpers'
-
+import helpers from '../../helpers';
 import './ApplicantDashboard.css';
 
 class ApplicantDashboard extends Component {
