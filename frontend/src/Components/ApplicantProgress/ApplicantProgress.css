@@ -13,3 +13,15 @@
 .hidden {
 	display: hidden;
 }
+
+.status-approved {
+	color: green;
+}
+
+.status-submitted {
+	color: blue;
+}
+
+.status-rejected {
+	color: red;
+}

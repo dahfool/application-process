@@ -1,6 +1,6 @@
 import React from 'react';
 import StatusMessage from './StatusMessage';
-
+import classnames from 'classnames';
 
 const DashboardStep = ({ step, addUrl, submit, alert, index, progress }) => {
   let submitBlock;
@@ -16,7 +16,10 @@ const DashboardStep = ({ step, addUrl, submit, alert, index, progress }) => {
   if (step.step !== 0) {
     submitBlock = (
       <form onSubmit={submit} >
-        <div className={status ? 'hidden' : 'block'}>
+        <div className={classnames({
+          'hidden': (status === 'Approved' || status === 'Submitted'),
+          'block': (status === 'Rejected' || status === undefined)
+        })}>
           <input
             required
             type='text'

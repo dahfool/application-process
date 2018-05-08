@@ -87,5 +87,33 @@ router.get('/steps/all', (req, res, next) => {
 	});
 });
 
+router.patch('/:id/approve', (req, res) => {
+	db.run(`UPDATE steps
+					SET step_status = 'Approved'
+					WHERE applicant_id = ? AND step_number = ?`, [req.params.id, req.body.index],
+					function(err) {
+						if (err) {
+							console.log(err.message);
+						} else {
+							res.status(200).send('sucess');
+						}
+					})
+});
+
+router.patch('/:id/reject', (req, res) => {
+	db.run(`UPDATE steps
+					SET step_status = 'Rejected'
+					WHERE applicant_id = ? AND step_number = ?`, [req.params.id, req.body.index],
+					function(err) {
+						if (err) {
+							console.log(err.message);
+						} else {
+							res.status(200).send('success');
+						}
+					})
+});
+
+
+
 
 module.exports = router;
