@@ -270,7 +270,14 @@ class ApplicationForm extends Component {
             </button>
           </form>
           </div>
-          <FormSubmittedMessage hideThankyouMessage={this.hideThankyouMessage} fullName={this.state.fullName} email={this.state.email} id={this.state.id} submitted={this.state.submitted}/>
+          <FormSubmittedMessage 
+          hideThankyouMessage={this.hideThankyouMessage} 
+          fullName={this.state.fullName} 
+          email={this.state.email} 
+          id={this.state.id} 
+          submitted={this.state.submitted}
+          status={this.state.status}
+          />
         </div>
       )
     }
