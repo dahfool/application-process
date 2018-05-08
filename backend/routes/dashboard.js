@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sqlite = require('sqlite3').verbose();
+const nodemailer = require("nodemailer");
 
 const filename = './database/db.sqlite';
 let db = new sqlite.Database(filename, (err) => {
@@ -16,6 +17,32 @@ router.get('/:id', function(req, res, next) {
 		db.all(sql, [myId], (err, rows) => {
 			if (err) {
 				return console.error(err.message);
+			}else {
+
+        //Send email to admin to notify that the student has submitted a step
+        var transporter = nodemailer.createTransport({
+			service: "gmail",
+			auth: {
+			  user: "cyfapplicationprocess@gmail.com",
+			  pass: "codeyourfuture"
+			}
+		  });
+  
+		  const mailOptions = {
+			from: "cyfapplicationprocess@gmail.com", // sender address
+			to: "cyfapplicationprocess@gmail.com", // receivers
+			subject: "Student Notification", // Subject line
+			html: `Notification: The following student has updated his/her dashboard. <br /> <br /> 
+						  Student ID: ${req.params.id} <br /> Step submitted: step ${
+			  req.body.step_number
+			} <br /> 
+						  Student url: http://localhost:3000/applicants/${req.params.id}`
+		  };
+  
+		  transporter.sendMail(mailOptions, function(err, info) {
+			if (err) console.log(err);
+			else console.log(info);
+		  });
 			}
 			res.status(200).json({
 				data: rows
