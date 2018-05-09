@@ -89,7 +89,6 @@ class ApplicantDashboard extends Component {
           url: this.state.steps[stepIndex].url,
         })
         .then(res => {
-          console.log(JSON.parse(res.config.data));
           this.setState({
             steps,
             progress: JSON.parse(res.config.data),
