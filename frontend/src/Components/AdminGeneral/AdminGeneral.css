@@ -1,3 +1,16 @@
 .applicants-table {
 	font-size: 1rem;
+	text-align: center;
+}
+
+.status-submitted {
+	color: blue;
+}
+
+.status-rejected {
+	color: red;
+}
+
+.status-approved {
+	color: green;
 }
