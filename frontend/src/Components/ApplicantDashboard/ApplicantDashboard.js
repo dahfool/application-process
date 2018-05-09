@@ -3,6 +3,7 @@ import DashboardStep from './DashboardStep';
 import axios from 'axios';
 import helpers from '../../helpers';
 import './ApplicantDashboard.css';
+import classnames from 'classnames';
 
 class ApplicantDashboard extends Component {
   state={
@@ -113,7 +114,10 @@ class ApplicantDashboard extends Component {
       <section className='applicant-dashboard'>
 			<p> Welcome to your Page, <b> {this.state.applicantData.fullName}</b> </p>
       <section className={(numberOfApproved === 5) ? 'block' : 'hidden'}> 
-        CONGRATULATIONS!  
+        <h4>CONGRATULATIONS!</h4>
+        <p> You have finished the Application Process and now you are a part of Code Your Future! </p>
+        <p> The administrator will contact you soon via email with more details about the future course </p>
+        <p> Good luck! </p>
       </section>
 			<p className={(numberOfApproved === 5) ? 'hidden' : 'block'}> There will be more information about steps and what applicant should do with them </p>
 	    <h2>Your Progress</h2>
