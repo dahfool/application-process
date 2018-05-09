@@ -113,7 +113,10 @@ class ApplicantDashboard extends Component {
     return(
       <section className='applicant-dashboard'>
 			<p> Welcome to your Page, <b> {this.state.applicantData.fullName}</b> </p>
-      <section className={(numberOfApproved === 5) ? 'block' : 'hidden'}> 
+      <section className={classnames('congrat-message', {
+        'block': (numberOfApproved === 5),
+        'hidden': (numberOfApproved != 5)
+      })}> 
         <h4>CONGRATULATIONS!</h4>
         <p> You have finished the Application Process and now you are a part of Code Your Future! </p>
         <p> The administrator will contact you soon via email with more details about the future course </p>
