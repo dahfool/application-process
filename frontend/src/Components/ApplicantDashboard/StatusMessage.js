@@ -20,7 +20,7 @@ const StatusMessage = ({ status, stepNumber }) => {
 						})}
 					> {status ? status : 'Not submitted'}
 					</b>
-					<p className={status === 'Rejected' ? 'block' : 'hidden'}> Your work was rejected because it didn't meet all of the requirements. Please, contact Administrator admin@mail.com to get the feedback, make some changes and re-submit the step! Good luck! </p>
+					<p className={status === 'Rejected' ? 'block' : 'hidden'}> Your work was rejected because it didn't meet all of the requirements. Please, contact Administrator <b>cyfapplicationprocess@gmail.com</b> to get the feedback, make some changes and re-submit the step! Good luck! </p>
 				</span>
 				);
 		}
