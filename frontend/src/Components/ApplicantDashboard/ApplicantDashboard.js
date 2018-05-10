@@ -3,6 +3,7 @@ import DashboardStep from './DashboardStep';
 import axios from 'axios';
 import helpers from '../../helpers';
 import './ApplicantDashboard.css';
+import classnames from 'classnames';
 
 class ApplicantDashboard extends Component {
   state={
@@ -102,10 +103,26 @@ class ApplicantDashboard extends Component {
   }
 
   render(){
+    let numberOfApproved = 0;
+    let finished;
+    this.state.progress.map(step => {
+      if (step.step_status === 'Approved') {
+        numberOfApproved += 1;
+      }
+    })
     return(
       <section className='applicant-dashboard'>
 			<p> Welcome to your Page, <b> {this.state.applicantData.fullName}</b> </p>
-			<p> There will be more information about steps and what applicant should do with them </p>
+      <section className={classnames('congrat-message', {
+        'block': (numberOfApproved === 5),
+        'hidden': (numberOfApproved != 5)
+      })}> 
+        <h4>CONGRATULATIONS!</h4>
+        <p> You have finished the Application Process and now you are a part of Code Your Future! </p>
+        <p> The administrator will contact you soon via email with more details about the future course </p>
+        <p> Good luck! </p>
+      </section>
+			<p className={(numberOfApproved === 5) ? 'hidden' : 'block'}> There will be more information about steps and what applicant should do with them </p>
 	    <h2>Your Progress</h2>
         {this.state.steps.map((step, i) => (
           <DashboardStep     
