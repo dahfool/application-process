@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FormSubmittedMessage from './FormSubmittedMessage';
+import './ApplicationForm.css'
 import classnames from 'classnames';
 import './ApplicationForm.css';
 
@@ -82,7 +83,7 @@ class ApplicationForm extends Component {
 	}
   render() {
       return (
-        <div>
+        <div className="ApplicationForm">
         <div className={classnames('application-form container', {
           'hidden': (this.state.submitted === true),
           'block': (this.state.submitted === false)
@@ -105,14 +106,11 @@ class ApplicationForm extends Component {
                 name="fullName"
                 id="fullName"
                 className="form-control form-control-lg"
-                placeholder="What's your name?"
+                placeholder="Please enter your first and last names."
                 value={this.state.fullName}
                 required
                 onChange={this.onChange}
               />
-              <small className="form-text text-muted">
-                Please enter your first and last names.
-              </small>
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="email" className="lead">
@@ -123,14 +121,12 @@ class ApplicationForm extends Component {
                 id="email"
                 name="email"
                 className="form-control form-control-lg"
-                placeholder="What's your email address?"
+                placeholder="We&#39;ll never share your email with anyone else."
                 value={this.state.email}
                 required
                 onChange={this.onChange}
               />
-              <small className="form-text text-muted">
-                We&#39;ll never share your email with anyone else.
-              </small>
+        
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="city" className="lead">
@@ -141,14 +137,12 @@ class ApplicationForm extends Component {
                 id="city"
                 name="city"
                 className="form-control form-control-lg"
-                placeholder="In what city you live in?"
+                placeholder=" E.g., London or Manchester"
                 value={this.state.city}
                 required
                 onChange={this.onChange}
               />
-              <small id="emailHelp" className="form-text text-muted">
-                E.g., London or Manchester
-              </small>
+             
             </div>
             <div className="form-group  mt-5">
               <label htmlor="tel" className="lead">
@@ -159,14 +153,12 @@ class ApplicationForm extends Component {
                 name="tel"
                 className="form-control form-control-lg"
                 id="tel"
-                placeholder="Enter your contact number"
+                placeholder=" E.g., 07712345678 or 02079460637"
                 value={this.state.tel}
                 required
                 onChange={this.onChange}
               />
-              <small className="form-text text-muted">
-                E.g., 07712345678 or 02079460637
-              </small>
+              
             </div>
 
             <div className="form-group  mt-5">
@@ -184,9 +176,7 @@ class ApplicationForm extends Component {
                 <option value={1}>Yes</option>
                 <option value={0}>No</option>
               </select>
-              <small className="form-text text-muted">
-                Please select yes or no
-              </small>
+              
             </div>
 
             <div className="form-group  mt-5">
@@ -198,14 +188,12 @@ class ApplicationForm extends Component {
                 id="country"
                 name="country"
                 className="form-control form-control-lg"
-                placeholder="Where are you from?"
+                placeholder="E.g., Iran or Sudan"
                 value={this.state.country}
                 required
                 onChange={this.onChange}
               />
-              <small className="form-text text-muted">
-                E.g., Iran or Sudan
-              </small>
+              
             </div>
             <div className="form-group  mt-5">
               <label htmlor="experience" className="lead">
@@ -224,9 +212,7 @@ class ApplicationForm extends Component {
                 <option>Intermidiate</option>
                 <option>Advance</option>
               </select>
-              <small className="form-text text-muted">
-                Please select the level of your programming skill
-              </small>
+              
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="itAccess" className="lead">
@@ -243,9 +229,7 @@ class ApplicationForm extends Component {
                 <option>Yes</option>
                 <option>No</option>
               </select>
-              <small className="form-text text-muted">
-                Please select yes or no
-              </small>
+              
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="hearAbout" className="lead">
@@ -256,18 +240,18 @@ class ApplicationForm extends Component {
                 id="hearAbout"
                 name="hearAbout"
                 className="form-control form-control-lg"
-                placeholder="How did you come across this course?"
+                placeholder="E.g., from your friends or council or inernet search"
                 value={this.state.hearAbout}
                 required
                 onChange={this.onChange}
               />
-              <small className="form-text text-muted">
-                E.g., from your friends or council or inernet search
-              </small>
+             
             </div>
+            <div className="submit-form">
             <button type="submit" className="btn btn-primary mt-2">
               Submit Application
             </button>
+            </div>
           </form>
           </div>
           <FormSubmittedMessage 
