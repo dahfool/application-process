@@ -22,7 +22,9 @@
 	border-color: rgba(0, 0, 0, .6)
 }
 
-.ApplicationForm input::-webkit-input-placeholder {
+.ApplicationForm input::-webkit-input-placeholder, 
+.ApplicationForm input::-moz-input-placeholder,
+:-ms-input-placeholder {
 	color: rgba(0, 0, 0, .6);
 	font-size: 18px;
 	font-weight: 400;

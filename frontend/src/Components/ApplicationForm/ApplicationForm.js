@@ -106,7 +106,7 @@ class ApplicationForm extends Component {
                 name="fullName"
                 id="fullName"
                 className="form-control form-control-lg"
-                placeholder="Please enter your first and last names."
+                placeholder="Your first and last names"
                 value={this.state.fullName}
                 required
                 onChange={this.onChange}
@@ -121,7 +121,7 @@ class ApplicationForm extends Component {
                 id="email"
                 name="email"
                 className="form-control form-control-lg"
-                placeholder="We&#39;ll never share your email with anyone else."
+                placeholder="Your email address"
                 value={this.state.email}
                 required
                 onChange={this.onChange}
