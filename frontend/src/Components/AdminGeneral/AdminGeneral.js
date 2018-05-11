@@ -9,7 +9,7 @@ class AdminGeneral extends React.Component {
 
     this.state = {
       applicants: [],
-      steps: []
+      steps: [],
     };
   }
 
@@ -31,13 +31,13 @@ class AdminGeneral extends React.Component {
 
   getListofSteps = () => {
     fetch(`http://localhost:3001/api/dashboard/steps/all`)
-    .then(results => results.json())
-    .then(data => {
-      this.setState({
-        steps: data.steps
-      });
-    })
-    .catch(err => console.log(err));
+      .then(results => results.json())
+      .then(data => {
+        this.setState({
+          steps: data.steps,
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -49,17 +49,24 @@ class AdminGeneral extends React.Component {
         steps={this.state.steps}
         id={applicant.id}
       />
-      ));
+    ));
     return (
       <section>
-      <h5> Step Status: </h5>
-        <ul>
-          <li> <b className='status-submitted'>S</b> - Submitted - Review required</li>
-          <li> <b className='status-approved'>A</b> - Approved</li>
-          <li> <b className='status-rejected'>R</b> - Rejected - Waiting for re-submission</li>
-        </ul>
-        <table className="applicants-table table-bordered">
-          <thead>  
+        <fieldset className="col-md-6 mt-5">
+          <legend>Steps Status</legend>
+          <div className="panel panel-default">
+            <div className="panel-body pt-3">
+              <p><b className="status-submitted">S</b> - Submitted - Review required</p>
+              <p><b className="status-approved">A</b> - Approved</p>
+              <p><b className="status-rejected">R</b> - Rejected - Waiting for
+            re-submission</p>
+            </div>
+          </div>
+        </fieldset>
+
+        
+        <table className="applicants-table table table-striped table-hover mt-5">
+          <thead className="thead-dark">
             <tr>
               <th>Full Name</th>
               <th>City</th>
