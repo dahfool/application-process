@@ -56,15 +56,19 @@ class AdminGeneral extends React.Component {
           <legend>Steps Status</legend>
           <div className="panel panel-default">
             <div className="panel-body pt-3">
-              <p><b className="status-submitted">S</b> - Submitted - Review required</p>
-              <p><b className="status-approved">A</b> - Approved</p>
-              <p><b className="status-rejected">R</b> - Rejected - Waiting for
-            re-submission</p>
+              <p>
+                <b className="status-submitted">S</b> - Step submitted and waiting for review
+              </p>
+              <p>
+                <b className="status-approved">A</b> - Step approved
+              </p>
+              <p>
+                <b className="status-rejected">R</b> - Step rejected and waiting for resubmission
+              </p>
             </div>
           </div>
         </fieldset>
 
-        
         <table className="applicants-table table table-striped table-hover mt-5">
           <thead className="thead-dark">
             <tr>
