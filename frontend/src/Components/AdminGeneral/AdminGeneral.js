@@ -56,7 +56,7 @@ class AdminGeneral extends React.Component {
             #Applicants Table
           </h1>
         <section>
-          <fieldset className="col-md-6 mt-5">
+          <fieldset className="col-md-6 mt-5 steps-status">
             <legend>Steps Status</legend>
             <div className="panel panel-default">
               <div className="panel-body pt-3">
