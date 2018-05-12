@@ -14,9 +14,7 @@
 .link-message {
 	font-size: 1.8rem;
 }
-.ApplicationFrom {
-	font-family: Arial, Helvetica, sans-serif;
-}
+
 .ApplicationForm input, .ApplicationForm select {
 	border-radius: 0;
 	border-color: rgba(0, 0, 0, .6)
@@ -36,4 +34,10 @@
 .submit-form button {
 	padding: 10px 30px;
 	font-size: 1.3rem;
+}
+
+@media screen and (max-width:576px) {
+    button.submit-form {
+		width: 100%;
+	}
 }

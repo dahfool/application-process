@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FormSubmittedMessage from './FormSubmittedMessage';
-import './ApplicationForm.css'
+import './ApplicationForm.css';
 import classnames from 'classnames';
 import './ApplicationForm.css';
 
@@ -19,13 +19,13 @@ class ApplicationForm extends Component {
       itAccess: 'Yes',
       hearAbout: '',
       submitted: false,
-      id: ''
+      id: '',
     };
   }
 
   onChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -56,10 +56,10 @@ class ApplicationForm extends Component {
       })
       .then(res => {
         console.log(res);
-        
+
         this.setState({
           submitted: true,
-          id: res.data.id
+          id: res.data.id,
         });
       })
       .catch(error => {
@@ -68,8 +68,8 @@ class ApplicationForm extends Component {
   };
 
   hideThankyouMessage = () => {
-	this.setState({
-	  fullName: '',
+    this.setState({
+      fullName: '',
       email: '',
       city: '',
       tel: '',
@@ -78,26 +78,28 @@ class ApplicationForm extends Component {
       experience: 'None',
       itAccess: 'Yes',
       hearAbout: '',
-      submitted: false
-	})
-	}
+      submitted: false,
+    });
+  };
   render() {
-      return (
-        <div className="ApplicationForm">
-        <div className={classnames('application-form container', {
-          'hidden': (this.state.submitted === true),
-          'block': (this.state.submitted === false)
-          })}>
-          <h1 className="text-center mt-5 pt-4 pb-3 display-5">
-            Student Application Form
+    return (
+      <div className="ApplicationForm">
+        <div
+          className={classnames('application-form container', {
+            hidden: this.state.submitted === true,
+            block: this.state.submitted === false,
+          })}
+        >
+          <h1 className="page-header">
+            #Student Application Form
           </h1>
           <form
-            className="mb-4 mt-5"
+            className="mb-4"
             action="http://localhost:3001/api/applicants"
             onSubmit={this.handleSubmit}
             method="post"
           >
-            <div className="form-group  mt-5">
+            <div className="form-group  mt-4">
               <label htmlFor="fullName" className="lead">
                 Name *
               </label>
@@ -126,7 +128,6 @@ class ApplicationForm extends Component {
                 required
                 onChange={this.onChange}
               />
-        
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="city" className="lead">
@@ -142,7 +143,6 @@ class ApplicationForm extends Component {
                 required
                 onChange={this.onChange}
               />
-             
             </div>
             <div className="form-group  mt-5">
               <label htmlor="tel" className="lead">
@@ -158,7 +158,6 @@ class ApplicationForm extends Component {
                 required
                 onChange={this.onChange}
               />
-              
             </div>
 
             <div className="form-group  mt-5">
@@ -176,7 +175,6 @@ class ApplicationForm extends Component {
                 <option value={1}>Yes</option>
                 <option value={0}>No</option>
               </select>
-              
             </div>
 
             <div className="form-group  mt-5">
@@ -193,7 +191,6 @@ class ApplicationForm extends Component {
                 required
                 onChange={this.onChange}
               />
-              
             </div>
             <div className="form-group  mt-5">
               <label htmlor="experience" className="lead">
@@ -212,7 +209,6 @@ class ApplicationForm extends Component {
                 <option>Intermidiate</option>
                 <option>Advance</option>
               </select>
-              
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="itAccess" className="lead">
@@ -229,7 +225,6 @@ class ApplicationForm extends Component {
                 <option>Yes</option>
                 <option>No</option>
               </select>
-              
             </div>
             <div className="form-group  mt-5">
               <label htmlFor="hearAbout" className="lead">
@@ -245,25 +240,24 @@ class ApplicationForm extends Component {
                 required
                 onChange={this.onChange}
               />
-             
             </div>
             <div className="submit-form">
-            <button type="submit" className="btn btn-primary mt-2">
-              Submit Application
-            </button>
+              <button type="submit" className="btn btn-primary mt-2 submit-form">
+                Submit Application
+              </button>
             </div>
           </form>
-          </div>
-          <FormSubmittedMessage 
-          hideThankyouMessage={this.hideThankyouMessage} 
-          fullName={this.state.fullName} 
-          email={this.state.email} 
-          id={this.state.id} 
+        </div>
+        <FormSubmittedMessage
+          hideThankyouMessage={this.hideThankyouMessage}
+          fullName={this.state.fullName}
+          email={this.state.email}
+          id={this.state.id}
           submitted={this.state.submitted}
           status={this.state.status}
-          />
-        </div>
-      )
-    }
+        />
+      </div>
+    );
   }
+}
 export default ApplicationForm;
