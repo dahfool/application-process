@@ -52,7 +52,7 @@ class AdminGeneral extends React.Component {
     ));
     return (
       <div className="AdminGeneral">
-      <h1 className="text-center mt-5 pt-4 pb-4 mb-5 display-5">
+      <h1 className="page-header">
             #Applicants Table
           </h1>
         <section>
