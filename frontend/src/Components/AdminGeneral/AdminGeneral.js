@@ -51,43 +51,50 @@ class AdminGeneral extends React.Component {
       />
     ));
     return (
-      <section>
-        <fieldset className="col-md-6 mt-5">
-          <legend>Steps Status</legend>
-          <div className="panel panel-default">
-            <div className="panel-body pt-3">
-              <p>
-                <b className="status-submitted">S</b> - Step submitted and waiting for review
-              </p>
-              <p>
-                <b className="status-approved">A</b> - Step approved
-              </p>
-              <p>
-                <b className="status-rejected">R</b> - Step rejected and waiting for resubmission
-              </p>
+      <div className="AdminGeneral">
+      <h1 className="text-center mt-5 pt-4 pb-4 mb-5 display-5">
+            #Applicants Table
+          </h1>
+        <section>
+          <fieldset className="col-md-6 mt-5">
+            <legend>Steps Status</legend>
+            <div className="panel panel-default">
+              <div className="panel-body pt-3">
+                <p>
+                  <b className="status-submitted">S</b> - Step submitted and
+                  waiting for review
+                </p>
+                <p>
+                  <b className="status-approved">A</b> - Step approved
+                </p>
+                <p>
+                  <b className="status-rejected">R</b> - Step rejected and
+                  waiting for resubmission
+                </p>
+              </div>
             </div>
-          </div>
-        </fieldset>
+          </fieldset>
 
-        <table className="applicants-table table table-striped table-hover mt-5">
-          <thead className="thead-dark">
-            <tr>
-              <th>Full Name</th>
-              <th>City</th>
-              <th>Refugee</th>
-              <th>Experience</th>
-              <th>IT Access</th>
-              <th>Step 0 </th>
-              <th>Step 1 </th>
-              <th>Step 2 </th>
-              <th>Step 3 </th>
-              <th>Step 4 </th>
-              <th>Step 5 </th>
-            </tr>
-          </thead>
-          <tbody>{applicantsList}</tbody>
-        </table>
-      </section>
+          <table className="applicants-table table table-striped table-hover mt-5">
+            <thead className="thead-dark">
+              <tr>
+                <th>Full Name</th>
+                <th>City</th>
+                <th>Refugee</th>
+                <th>Experience</th>
+                <th>IT Access</th>
+                <th>Step 0 </th>
+                <th>Step 1 </th>
+                <th>Step 2 </th>
+                <th>Step 3 </th>
+                <th>Step 4 </th>
+                <th>Step 5 </th>
+              </tr>
+            </thead>
+            <tbody>{applicantsList}</tbody>
+          </table>
+        </section>
+      </div>
     );
   }
 }
