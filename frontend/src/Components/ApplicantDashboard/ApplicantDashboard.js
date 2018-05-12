@@ -5,6 +5,7 @@ import axios from 'axios';
 import helpers from '../../helpers';
 
 import './ApplicantDashboard.css';
+import classnames from 'classnames';
 
 class ApplicantDashboard extends Component {
   state = {
@@ -109,19 +110,33 @@ class ApplicantDashboard extends Component {
     }
   };
 
-  render() {
-    return (
-      <section className="applicant-dashboard">
-        <p>
-          Welcome to your personal  Dashboard, <b> {this.state.applicantData.fullName}</b>
-        </p>
-        <p>
-        You’ll need to complete a 5 steps process before the course begins. For every step we  provided you an input field where you will paste the link of the tutorial related to the step you have completed.
-        You will find more information about each step by clicking
-        on their title.  
-        </p>
-        <p> <b> NB: You will not be allow for example to submit  a link related to step 3 into input field related to step 4 .</b></p>
-        <h2>Your Progress</h2>
+  render(){
+    let numberOfApproved = 0;
+    let finished;
+    this.state.progress.map(step => {
+      if (step.step_status === 'Approved') {
+        numberOfApproved += 1;
+      }
+    })
+    return(
+      <section className='applicant-dashboard'>
+			<p> Welcome to your Page, <b> {this.state.applicantData.fullName}</b> </p>
+      <section className={classnames('congrat-message', {
+        'block': (numberOfApproved === 5),
+        'hidden': (numberOfApproved != 5)
+      })}> 
+        <h4>CONGRATULATIONS!</h4>
+        <p> You have finished the Application Process and now you are a part of Code Your Future! </p>
+        <p> The administrator will contact you soon via email with more details about the future course </p>
+        <p> Good luck! </p>
+      </section>
+      <p className={(numberOfApproved === 5) ? 'hidden' : 'block'}> 
+      You’ll need to complete a 5 steps process before the course begins. For every step we  provided you an input field where you will paste the link of the tutorial related to the step you have completed.
+      You will find more information about each step by clicking
+      on their title.  
+      </p>
+      <p> <b> NB: You will not be allow for example to submit  a link related to step 3 into input field related to step 4 .</b></p>
+      <h2>Your Progress</h2>
         {this.state.steps.map((step, i) => (
           <DashboardStep
             step={step}

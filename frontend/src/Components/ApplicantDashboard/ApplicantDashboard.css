@@ -84,3 +84,10 @@
 .dashboard-step a:hover {
 	text-decoration: none;
 }
+.congrat-message {
+	padding-top: 0.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	border: 2px solid green;
+	background-color: #e4ffe3;
+}
