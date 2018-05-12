@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 const submitField = props => {
-  console.log(props.step.details)
-  
   return (
     <Fragment>
       <form onSubmit={props.submit} className='submit-url'>
-      direct link here
+      <p>  <a href={props.directLink} target='_blank'> Direct access to tutorial</a></p>
       <div className={classnames({
         'hidden': (props.status === 'Approved' || props.status === 'Submitted'),
         'block': (props.status === 'Rejected' || props.status === undefined)

@@ -4,7 +4,7 @@ import SubmitField from './SubmitField';
 import StatusMessage from './StatusMessage';
 import classnames from 'classnames';
 
-const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id }) => {
+const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id, directLink }) => {
   let submitBlock;
   let status;
   if (progress.length > 0) {
@@ -26,15 +26,16 @@ const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id }) => 
         progress={progress}
         index={index}
         status={status}
+        directLink={directLink}
       />
     );
   }
 
   const stepHeading = (
     <div className="card-body dashboard-name">
-      <h4 className="card-title">Step {step.step}</h4>
+      <h4 className="card-title">{step.step !== 0 && step.step + '-'}  { step.details}</h4>
       <h4>
-        <b>{step.details}</b>
+        
       </h4>
     </div>
   );

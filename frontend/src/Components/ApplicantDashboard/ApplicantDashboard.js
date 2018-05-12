@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import DashboardStep from './DashboardStep';
 import axios from 'axios';
 import helpers from '../../helpers';
@@ -93,7 +94,9 @@ class ApplicantDashboard extends Component {
             steps,
             progress: JSON.parse(res.config.data),
           });
+          console.log('sss',this.context.router.history.push(`${this.props.location.pathname}`))
         })
+        
         .catch(error => {
           console.log(error.message);
         });
@@ -110,12 +113,14 @@ class ApplicantDashboard extends Component {
     return (
       <section className="applicant-dashboard">
         <p>
-          Welcome to your Page, <b> {this.state.applicantData.fullName}</b>
+          Welcome to your personal  Dashboard, <b> {this.state.applicantData.fullName}</b>
         </p>
         <p>
-          There will be more information about steps and what applicant should
-          do with them
+        You’ll need to complete a 5 steps process before the course begins. For every step we  provided you an input field where you will paste the link of the tutorial related to the step you have completed.
+        You will find more information about each step by clicking
+        on their title.  
         </p>
+        <p> <b> NB: You will not be allow for example to submit  a link related to step 3 into input field related to step 4 .</b></p>
         <h2>Your Progress</h2>
         {this.state.steps.map((step, i) => (
           <DashboardStep
@@ -127,6 +132,7 @@ class ApplicantDashboard extends Component {
             index={i}
             progress={this.state.progress}
             id={this.state.id}
+            directLink={step.directLink}
           />
         ))}
       </section>

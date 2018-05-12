@@ -102,13 +102,12 @@ class SingleStep extends Component {
           <p> Overview </p>
         </div>
         <div>
-          <h3> PREREQUISITES </h3>
           <p>
-            We recommand you to read and follow these instruction before you
+            We recommand you to read and follow these instructions before you
             start the tutorial:
           </p>
           <ul>
-            <li> Make sure you sign up before you start </li>
+            <li> {this.state.step.processus}:  {this.state.step.directLink.map(link =><li> <a href={link}> Clik here to access </a> </li>)} </li>
             <li> Make sure you are login anytime you complete the tutorial</li>
             <li>
               Make sure you have done all parts of the tutorial before you
@@ -129,6 +128,7 @@ class SingleStep extends Component {
           alert={this.state.step.alert}
           progress={this.state.progress}
           status={status}
+          directLink={this.state.step.directLink}
         />
         <StatusMessage
           status={status}
