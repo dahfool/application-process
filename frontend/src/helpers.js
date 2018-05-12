@@ -7,7 +7,7 @@ exports.stepsArray = [
     
     {processus: 'Register and complete Codecademy Responsive Design course at ' , status: '', alert: '', step: 3, details: 'Code Academy: Responsive Design Tutorial', link:'https://www.codecademy.com', directLink: ['https://www.codecademy.com/learn/learn-responsive-design'], url: ''},
     
-    {processus: 'Complete the ‘Tribute page’ challenge, implement what you’ve learned so far from the HTML, CSS and Responsive Design courses at ' , status: '', alert: '', step: 4, details: 'Create a Web Page', link: 'https://codepen.io', directLink: ['https://www.freecodecamp.org/challenges/build-a-tribute-page'],  url: ''},
+    {processus: ' Implement what you’ve learned so far from the HTML, CSS and Responsive Design courses.' , status: '', alert: '', step: 4, details: 'Create a Web Page', link: 'https://codepen.io', directLink: ['https://www.freecodecamp.org/challenges/build-a-tribute-page'],  url: ''},
     
     {processus: 'Add the Best Practices described  to your Tribute Page as describe here'  , status: '', alert: '', step: 5, details: 'Iterate a Web Page',  link: 'https://codepen.io', directLink: ['https://drive.google.com/file/d/11SyzjpcJu-iUkEdRkI0ObHubejVWp2QU/view'],  url: ''}
 ];

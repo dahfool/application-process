@@ -6,7 +6,8 @@ const submitField = props => {
   return (
     <Fragment>
       <form onSubmit={props.submit} className='submit-url'>
-      <p>  <a href={props.directLink} target='_blank'> Direct access to tutorial</a></p>
+      <p>  {props.directLink.length > 1 ? props.directLink.map(link => <li><a href={link} target='_blank'> Direct access to tutorial</a></li>)
+        : <a href={props.directLink} target="_blank">Direct access to tutorial</a>}</p>
       <div className={classnames({
         'hidden': (props.status === 'Approved' || props.status === 'Submitted'),
         'block': (props.status === 'Rejected' || props.status === undefined)

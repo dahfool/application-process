@@ -101,13 +101,14 @@ class SingleStep extends Component {
         <div className="step-overview">
           <p> Overview </p>
         </div>
-        <div>
+        {this.state.step.step <= 3 && (
+          <div>
           <p>
             We recommand you to read and follow these instructions before you
             start the tutorial:
           </p>
           <ul>
-            <li> {this.state.step.processus}:  {this.state.step.directLink.map(link =><li> <a href={link}> Clik here to access </a> </li>)} </li>
+            <li> {this.state.step.processus}:  {this.state.step.directLink.map(link =><li> <a href={link} target="_blank"> Clik here to access </a> </li>)} </li>
             <li> Make sure you are login anytime you complete the tutorial</li>
             <li>
               Make sure you have done all parts of the tutorial before you
@@ -119,7 +120,20 @@ class SingleStep extends Component {
               have completed
             </li>
           </ul>
-        </div>
+        </div>) 
+      }
+      {this.state.step.step > 3 && 
+        <div>
+          {this.state.step.step === 4 && <p>This step require you to build you own page.</p>}
+          {this.state.step.step === 5 && <p>This step require you to improve your Tribute Page.</p>}
+          {this.state.step.step === 4 && (<ul><li> Complete the ‘Tribute page’ challenge <a href={this.state.step.directLink} target="_blank">here</a></li> <li> {this.state.step.processus}</li></ul>)
+           }
+          { this.state.step.step === 5 && 
+           <ul> <li> Add the Best Practices described as described <a href={this.state.step.directLink} target="_blank">here</a></li> </ul>
+          }
+        </div>}
+        
+      
         <p className={status ? 'hidden' : 'block'}> Paste your link below </p>
         <SubmitField
           addUrl={this.addUrlHandler}
