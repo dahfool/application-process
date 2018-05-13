@@ -1,53 +1,57 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import SubmitField from './SubmitField';
 import StatusMessage from './StatusMessage';
-import classnames from 'classnames';
 
-const DashboardStep = ({ step, addUrl, submit, alert, index, progress }) => {
+const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id, directLink }) => {
   let submitBlock;
   let status;
   if (progress.length > 0) {
     progress.map(step => {
       if (step.step_number === index) {
         status = step.step_status;
-      };
+      }
+      return status;
     });
-  };
+  }
 
   if (step.step !== 0) {
     submitBlock = (
-      <form onSubmit={submit} >
-        <div className={classnames({
-          'hidden': (status === 'Approved' || status === 'Submitted'),
-          'block': (status === 'Rejected' || status === undefined)
-        })}>
-          <input
-            required
-            type='text'
-            placeholder='Add url here'
-            name='url'
-            value={step.url}
-            onChange={addUrl}
-          />
-          <button className='btn btn-secondary' type='submit'>
-            Submit step
-          </button>
-          <small id='emailHelp' className='form-text text-muted'>
-            {alert}
-          </small>
-        </div>
-      </form>
+      <SubmitField
+        step={step}
+        addUrl={addUrl}
+        alert={alert}
+        submit={submit}
+        progress={progress}
+        index={index}
+        status={status}
+        directLink={directLink}
+      />
     );
   }
 
+  const stepHeading = (
+    <div className="card-body dashboard-name">
+      <h4 className="card-title">{step.step !== 0 && step.step + '-'}  { step.details}</h4>
+      <h4>
+        
+      </h4>
+    </div>
+  );
   return (
-    <section className='dashboard-step'>
-      <h3>Step {step.step}</h3>
-      <p>
-        <b>{step.details}</b>
-      </p>
-      {submitBlock}
-      <StatusMessage status={status} stepNumber={step.step}/>
-    </section>
+    <div className="card mb-3">
+      <section className="dashboard-step">
+        {step.step === 0 ? (
+          stepHeading
+        ) : (
+          <Link to={`/applicant-dashboard/${id}/step/${step.step}`}>
+            {stepHeading}
+          </Link>
+        )}
+        {submitBlock}
+      </section>
+      <StatusMessage status={status} stepNumber={step.step} />
+    </div>
   );
 };
 

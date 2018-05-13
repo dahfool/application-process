@@ -19,8 +19,8 @@
 	margin-bottom: 1rem;
 }
 
-.dashboard-step small {
-	color:#ee0402!important;
+.submit-url .form-text {
+	color:#ee0402;
 	font-size: 85%;
     font-weight: 600;
 }
@@ -33,6 +33,57 @@
 	display: block;
 }
 
+.step-overview {
+	border-bottom: 3px solid #711b1b;
+    padding: 1.3rem 0;
+}
+
+.step-overview p {
+	margin-bottom: -22px;
+	font-size: 1.5rem;
+}
+.card-head {
+	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
+	height: 10px;
+}
+
+.card-dashboard {
+	height: 72px;
+    background: #bbb;
+    line-height: 2rem;
+	padding: 0 10px;
+	margin-top: 10px;
+    margin-left: 10px;
+}
+
+.card-dashboard h4 {
+	text-align: center;
+    line-height: 4rem;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card-title {
+	display: flex;
+	align-items: center;
+}
+
+.card-title h3 {
+	padding-left: 45px;
+    line-height: 65px;
+}
+
+.dashboard-name {
+	display: flex;
+}
+
+.dashboard-step h4:last-child {
+	padding-left: 2rem;
+}
+
+.dashboard-step a:hover {
+	text-decoration: none;
+}
 .congrat-message {
 	padding-top: 0.5rem;
 	margin-bottom: 1rem;
