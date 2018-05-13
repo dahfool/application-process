@@ -19,7 +19,7 @@ This application has been developed for mainly two types of users:
 | :------: | :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
 |  **Olena**  | [![Icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/OlenaKashuba)  | [![Icon](https://linkedin.com/favicon.ico)](https://www.linkedin.com/in/olena-kashuba-466052159/) |   [![Icon](https://twitter.com/favicon.ico)](https://twitter.com/olena_k91)   |                                                                              |
 | **Louis** | [![icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/LouiaR)  |   | |
-|   **Prabesh**   |   [![icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/prabshah)   |           |    |
+|   **Prabesh**   |   [![icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/prabshah)   |    [![Icon](https://linkedin.com/favicon.ico)](https://www.linkedin.com/in/prabesh-shah-389199137/)       |    |
 
 #### **Mentor** - **Gerald**     [![Git](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/dahfool)
 
