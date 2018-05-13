@@ -4,25 +4,11 @@ import classnames from 'classnames';
 const submitField = props => {
 	return (
 		<Fragment>
-			<form onSubmit={props.submit} className="submit-url">
-				<p>
-					{props.directLink.length > 1 ? (
-						props.directLink.map( (link, index)=> (
-							<li key={index}>
-								<a href={link} target="_blank">
-									Direct access to tutorial
-								</a>
-							</li>
-						))
-					) : (
-						<a href={props.directLink} target="_blank">
-							Direct access to tutorial
-						</a>
-					)}
-				</p>
+			<form onSubmit={props.submit} className="form-inline">
 				<div
-					className={classnames({
-						hidden: props.status === 'Approved' || props.status === 'Submitted',
+					className={classnames(
+						"form-group",
+						{hidden: props.status === 'Approved' || props.status === 'Submitted',
 						block: props.status === 'Rejected' || props.status === undefined,
 					})}>
 					<input
@@ -30,10 +16,12 @@ const submitField = props => {
 						type="text"
 						placeholder="Add url here"
 						name="url"
+						className="form-control form-control-lg"
+                		placeholder="Paste your link here"
 						value={props.step.url}
 						onChange={props.addUrl}
 					/>
-					<button className="btn btn-secondary" type="submit">
+					<button className="btn btn-primary ml-3 btn-lg" type="submit">
 						Submit step
 					</button>
 					<small id="emailHelp" className="form-text">

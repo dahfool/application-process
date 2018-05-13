@@ -1,10 +1,10 @@
-import React from 'react';
+import React , { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import SubmitField from './SubmitField';
+// import SubmitField from './SubmitField';
 import StatusMessage from './StatusMessage';
 
 const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id, directLink }) => {
-  let submitBlock;
+  // let submitBlock;
   let status;
   if (progress.length > 0) {
     progress.map(step => {
@@ -15,43 +15,26 @@ const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id, direc
     });
   }
 
-  if (step.step !== 0) {
-    submitBlock = (
-      <SubmitField
-        step={step}
-        addUrl={addUrl}
-        alert={alert}
-        submit={submit}
-        progress={progress}
-        index={index}
-        status={status}
-        directLink={directLink}
-      />
-    );
-  }
-
   const stepHeading = (
-    <div className="card-body dashboard-name">
-      <h4 className="card-title">{step.step !== 0 && step.step + '-'}  { step.details}</h4>
-      <h4>
-        
-      </h4>
+    <div className="card-body dashboard-name pl-0 p-0">
+      <h4 className="card-title">{step.step !== 0 && step.step + '.'}  { step.details}</h4>
     </div>
   );
   return (
-    <div className="card mb-3">
-      <section className="dashboard-step">
+    <div className="card-step">
         {step.step === 0 ? (
           stepHeading
         ) : (
           <Link to={`/applicant-dashboard/${id}/step/${step.step}`}>
-            {stepHeading}
+            <div className="card mb-3 p-4">
+            <section className="dashboard-step">
+              {stepHeading}
+              <StatusMessage status={status} stepNumber={step.step} />
+              </section>
+            </div>
           </Link>
         )}
-        {submitBlock}
-      </section>
-      <StatusMessage status={status} stepNumber={step.step} />
-    </div>
+    </div>  
   );
 };
 
