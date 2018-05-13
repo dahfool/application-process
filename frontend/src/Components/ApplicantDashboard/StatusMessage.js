@@ -27,13 +27,13 @@ const StatusMessage = ({ status, stepNumber }) => {
 					> {status ? statusMsg : 'Not submitted'}
 					</b>
 					<p className={status === 'Rejected' ? 'block' : 'hidden'}> 
-						Oops! Seems like your work didn't meet all of the requirements. But don't worry!</p> 
+						Oops! Seems like your work didn't meet all of the requirements. But don't worry!
 						<ul> 
 							<li> Make sure you submitted the right link </li>
 							<li> Double check if you did all of the required thing for the step </li>
 							<li> Re-submit the step </li>
 						</ul>
-						<p>If you are still not sure, feel free to contact Administrator <b>cyfapplicationprocess@gmail.com</b>. Good luck! </p>
+						If you are still not sure, feel free to contact Administrator <b>cyfapplicationprocess@gmail.com</b>. Good luck! </p>
 				</span>
 				);
 		}
