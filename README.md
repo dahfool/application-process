@@ -25,8 +25,10 @@ This application has been developed for mainly two types of users:
 
 
 ## Technologies used
- **Front-end:** - HTML, CSS, SASS, Bootstrap, JavaScript, React JS. 
+ **Front-end:** - HTML, CSS, Bootstrap, JavaScript, React JS. 
  **Back-end:** - Node JS, Express, SQLite
+
+ Link to the Trello: [`https://trello.com/b/dGYEbCNs/cyf-application-process-app)`](https://trello.com/b/dGYEbCNs/cyf-application-process-app)
 
 ##Try it yourself
 Feel free to play around with our project! For this you will need to follow those steps:
@@ -56,4 +58,6 @@ Feel free to play around with our project! For this you will need to follow thos
 * Open your browser
 	At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
 	At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
+
+Reviews and comments are more than welcome! 
 
