@@ -15,7 +15,6 @@
 }
 
 .dashboard-step {
-	border-top: 1px solid grey;
 	margin-bottom: 1rem;
 }
 
@@ -77,10 +76,6 @@
 	display: flex;
 }
 
-.dashboard-step h4:last-child {
-	padding-left: 2rem;
-}
-
 .dashboard-step a:hover {
 	text-decoration: none;
 }
@@ -90,4 +85,8 @@
 	text-align: center;
 	border: 2px solid green;
 	background-color: #e4ffe3;
+}
+
+.card-step a{
+	color: #212529;
 }
