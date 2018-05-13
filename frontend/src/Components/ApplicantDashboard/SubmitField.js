@@ -6,8 +6,9 @@ const submitField = props => {
 		<Fragment>
 			<form onSubmit={props.submit} className="form-inline">
 				<div
-					className={classnames(
+					className={
 						"form-group",
+						classnames(
 						{hidden: props.status === 'Approved' || props.status === 'Submitted',
 						block: props.status === 'Rejected' || props.status === undefined,
 					})}>
