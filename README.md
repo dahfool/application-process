@@ -1,10 +1,10 @@
 
 # Code Your Future – Application Process
 
-### About the project
+## About the project
 This application has been developed to improve the existing application process of Code Your Future’s Coding Courses in order to make it:
-* for Applicants - clear and exciting 
-* for Administrator - structured and easy to manage
+		*for Applicants* - clear and exciting 
+		*for Administrator* - structured and easy to manage
 It aims to serve as an effective communication tool between potential students and Code Your Future. 
 
 This application has been developed for mainly two types of users:
@@ -17,16 +17,43 @@ This application has been developed for mainly two types of users:
 
 |   Name   |                                                          Github                                                           |                                             Linkedin                                             |                                   Twitter                                    |
 | :------: | :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
-|  Olena   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/OlenaKashuba)  | [![Foo](https://linkedin.com/favicon.ico)](https://www.linkedin.com/in/olena-kashuba-466052159/) |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/olena_k91)   |                                                                              |
-| Louis | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/LouiaR)  |  [![Foo](https://linkedin.com/favicon.ico)]()  | [![Foo](https://twitter.com/favicon.ico)]()  |
-|   Prabesh   |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/prabshah)   |        [![Foo](https://linkedin.com/favicon.ico)]()         |   [![Foo](https://twitter.com/favicon.ico)]()   |
+|  **Olena**  | [![Icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/OlenaKashuba)  | [![Icon](https://linkedin.com/favicon.ico)](https://www.linkedin.com/in/olena-kashuba-466052159/) |   [![Icon](https://twitter.com/favicon.ico)](https://twitter.com/olena_k91)   |                                                                              |
+| **Louis** | [![icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/LouiaR)  |   | |
+|   **Prabesh**   |   [![icon](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/prabshah)   |           |    |
 
+#### **Mentor** - **Gerald**     [![Git](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/dahfool)
 
-## Mentor
-
-### Gerald 
-Gerald will be guiding the team throughout the process and will help the team achieve the goal with his expertise.
 
 ## Technologies used
-### Front-end: - HTML, CSS, SASS, Bootstrap, JavaScript, React JS. 
-### Back-end: - Node JS, Express, SQLite
+ **Front-end:** - HTML, CSS, SASS, Bootstrap, JavaScript, React JS. 
+ **Back-end:** - Node JS, Express, SQLite
+
+##Try it yourself
+Feel free to play around with our project! For this you will need to follow those steps:
+
+* Fork the repo and go to the project folder in your terminal
+
+*  Install modules for frontend: 
+	`cd frontend`
+	`npm install`
+
+*  Install modules for backend: 
+	`cd backend` 
+	`npm install`
+
+* Run a database: 
+ 	`cd backend/database`
+	`sqlite3 db.sqlite`
+
+* Run frontend: 
+ 	`cd frontend`
+	`npm run start`
+
+* Run backend: 
+ 	`cd backend`
+	`npm run start`
+
+* Open your browser
+	At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
+	At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
+
