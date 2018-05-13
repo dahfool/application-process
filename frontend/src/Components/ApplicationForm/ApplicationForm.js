@@ -91,7 +91,7 @@ class ApplicationForm extends Component {
           })}
         >
           <h1 className="page-header">
-            #Student Application Form
+            Student Application Form
           </h1>
           <form
             className="mb-4"

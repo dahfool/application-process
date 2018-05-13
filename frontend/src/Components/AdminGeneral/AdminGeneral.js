@@ -53,7 +53,7 @@ class AdminGeneral extends React.Component {
     return (
       <div className="AdminGeneral">
       <h1 className="page-header">
-            #Applicants Table
+            Applicants Table
           </h1>
         <section>
           <fieldset className="col-md-6 mt-5 steps-status">
