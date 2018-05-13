@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import DashboardStep from './DashboardStep';
 import axios from 'axios';
 import helpers from '../../helpers';
@@ -93,12 +92,7 @@ class ApplicantDashboard extends Component {
 				.then(res => {
 					this.setState({
 						steps,
-						progress: JSON.parse(res.config.data),
 					});
-					console.log(
-						'sss',
-						this.context.router.history.push(`${this.props.location.pathname}`),
-					);
 				})
 
 				.catch(error => {
@@ -114,32 +108,31 @@ class ApplicantDashboard extends Component {
 	};
 
 	render() {
-		let numberOfApproved = 0;
-		let finished;
+    let numberOfApproved = 0;
 		this.state.progress.map(step => {
 			if (step.step_status === 'Approved') {
-				numberOfApproved += 1;
-			}
+         numberOfApproved += 1;
+      }
+      return numberOfApproved 
 		});
 		return (
 			<section className="applicant-dashboard">
 				<p>
-					Welcome to your Page, <b> {this.state.applicantData.fullName}</b>{' '}
+					Welcome to your Page, <b> {this.state.applicantData.fullName}</b>
 				</p>
 				<section
 					className={classnames('congrat-message', {
 						block: numberOfApproved === 5,
-						hidden: numberOfApproved != 5,
+						hidden: numberOfApproved !== 5,
 					})}>
 					<h4>CONGRATULATIONS!</h4>
 					<p>
 						You have finished the Application Process and now you are a part of
-						Code Your Future!{' '}
+						Code Your Future!
 					</p>
 					<p>
-						{' '}
 						The administrator will contact you soon via email with more details
-						about the future course{' '}
+						about the future course
 					</p>
 					<p> Good luck! </p>
 				</section>

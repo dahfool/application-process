@@ -61,7 +61,6 @@ class SingleStep extends Component {
 					step.url = '';
 					this.setState({
 						step,
-						progress: JSON.parse(res.config.data),
 					});
 				})
 				.catch(error => {
@@ -108,16 +107,14 @@ class SingleStep extends Component {
 							start the tutorial:
 						</p>
 						<ul>
-							<li>
 								{this.state.step.processus}:
-								{this.state.step.directLink.map(link => (
-									<li>
+								{this.state.step.directLink.map( (link, index) => (
+									<li key={index}>
 										<a href={link} target="_blank">
 											Clik here to access
 										</a>
 									</li>
 								))}
-							</li>
 							<li>
 								Make sure you are login anytime you complete the tutorial
 							</li>
@@ -144,10 +141,8 @@ class SingleStep extends Component {
 						{this.state.step.step === 4 && (
 							<ul>
 								<li>
-									Complete the ‘Tribute page’ challenge
-									<a href={this.state.step.directLink} target="_blank">
-										here
-									</a>
+									Complete the ‘Tribute page’ challenge 
+									  <a href={this.state.step.directLink} target="_blank"> here </a>
 								</li>
 								<li> {this.state.step.processus}</li>
 							</ul>
@@ -156,9 +151,7 @@ class SingleStep extends Component {
 							<ul>
 								<li>
 									Add the Best Practices described as described
-									<a href={this.state.step.directLink} target="_blank">
-										here
-									</a>
+									<a href={this.state.step.directLink} target="_blank">	here	</a>
 								</li>
 							</ul>
 						)}

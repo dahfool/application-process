@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 const submitField = props => {
@@ -8,10 +7,9 @@ const submitField = props => {
 			<form onSubmit={props.submit} className="submit-url">
 				<p>
 					{props.directLink.length > 1 ? (
-						props.directLink.map(link => (
-							<li>
+						props.directLink.map( (link, index)=> (
+							<li key={index}>
 								<a href={link} target="_blank">
-									{' '}
 									Direct access to tutorial
 								</a>
 							</li>
