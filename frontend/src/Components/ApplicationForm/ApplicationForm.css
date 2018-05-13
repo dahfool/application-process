@@ -14,3 +14,30 @@
 .link-message {
 	font-size: 1.8rem;
 }
+
+.ApplicationForm input, .ApplicationForm select {
+	border-radius: 0;
+	border-color: rgba(0, 0, 0, .6)
+}
+
+.ApplicationForm input::-webkit-input-placeholder, 
+.ApplicationForm input::-moz-input-placeholder,
+:-ms-input-placeholder {
+	color: rgba(0, 0, 0, .6);
+	font-size: 18px;
+	font-weight: 400;
+}
+.submit-form {
+	text-align: center;
+	margin-top: 30px;
+}
+.submit-form button {
+	padding: 10px 30px;
+	font-size: 1.3rem;
+}
+
+@media screen and (max-width:576px) {
+    button.submit-form {
+		width: 100%;
+	}
+}
