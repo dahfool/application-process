@@ -40,33 +40,33 @@ This application has been developed for mainly two types of users:
 
 #### FRONTEND
 
-`cd frontend`
+    cd frontend
 
 *  Install modules
 
-	`npm install`
+    npm install
 
 * Start 
 
-	`npm run start`
+    npm run start
 
 #### BACKEND
 
-`cd backend` 
+    cd backend
 
 *  Install modules:
 
-	`npm install`
+    npm install
 
 * Run a database: 
 
- 	`cd backend/database`
-	`sqlite3 db.sqlite`
+    cd backend/database
+    sqlite3 db.sqlite
 
 * Start 
 
- 	`cd backend`
-	`npm run start`
+    cd backend
+    npm run start
 
 * Open your browser
 	At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
