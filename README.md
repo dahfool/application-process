@@ -31,27 +31,38 @@ This application has been developed for mainly two types of users:
  Link to the Trello: [`https://trello.com/b/dGYEbCNs/cyf-application-process-app)`](https://trello.com/b/dGYEbCNs/cyf-application-process-app)
 
 ##Try it yourself
-Feel free to play around with our project! For this you will need to follow those steps:
+
+###Getting started
 
 * Fork the repo and go to the project folder in your terminal
 
-*  Install modules for frontend: 
-	`cd frontend`
+####FRONTEND
+
+`cd frontend`
+
+*  Install modules
+
 	`npm install`
 
-*  Install modules for backend: 
-	`cd backend` 
+* Start 
+
+	`npm run start`
+
+####BACKEND
+
+`cd backend` 
+
+*  Install modules:
+
 	`npm install`
 
 * Run a database: 
+
  	`cd backend/database`
 	`sqlite3 db.sqlite`
 
-* Run frontend: 
- 	`cd frontend`
-	`npm run start`
+* Start 
 
-* Run backend: 
  	`cd backend`
 	`npm run start`
 
