@@ -1,41 +1,44 @@
-import React , { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-// import SubmitField from './SubmitField';
 import StatusMessage from './StatusMessage';
 
-const DashboardStep = ({ step, addUrl, submit, alert, index, progress, id, directLink }) => {
-  // let submitBlock;
-  let status;
-  if (progress.length > 0) {
-    progress.map(step => {
-      if (step.step_number === index) {
-        status = step.step_status;
-      }
-      return status;
-    });
-  }
-
-  const stepHeading = (
-    <div className="card-body dashboard-name pl-0 p-0">
-      <h4 className="card-title">{step.step !== 0 && step.step + '.'}  { step.details}</h4>
-    </div>
-  );
-  return (
-    <div className="card-step">
-        {step.step === 0 ? (
-          stepHeading
-        ) : (
-          <Link to={`/applicant-dashboard/${id}/step/${step.step}`}>
-            <div className="card mb-3 p-4">
-            <section className="dashboard-step">
-              {stepHeading}
-              <StatusMessage status={status} stepNumber={step.step} />
-              </section>
-            </div>
-          </Link>
-        )}
-    </div>  
-  );
+const DashboardStep = ({
+	step,
+	addUrl,
+	submit,
+	alert,
+	index,
+	progress,
+	id,
+	directLink,
+}) => {
+	let status;
+	if (progress.length > 0) {
+		progress.map(step => {
+			if (step.step_number === index) {
+				status = step.step_status;
+			}
+			return status;
+		});
+	}
+	return (
+		<Link to={`/applicant-dashboard/${id}/step/${step.step}`}>
+			{step.step !== 0 && (
+				<div className=" card m-2 mb-5 mt-5 card-step ">
+					<div className="step-title">
+						<span className="step-number p-5 ">{step.step}</span>
+						<div className="pt-4 pl-3 step-name">
+							{' '}
+							<h4 className="card-title">
+								<span className="title-color"> {step.details}</span>{' '}
+							</h4>
+							<StatusMessage status={status} stepNumber={step.step} />{' '}
+						</div>
+					</div>
+				</div>
+			)}
+		</Link>
+	);
 };
 
 export default DashboardStep;

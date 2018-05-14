@@ -108,60 +108,68 @@ class ApplicantDashboard extends Component {
 	};
 
 	render() {
-    let numberOfApproved = 0;
+		let numberOfApproved = 0;
 		this.state.progress.map(step => {
 			if (step.step_status === 'Approved') {
-         numberOfApproved += 1;
-      }
-      return numberOfApproved 
+				numberOfApproved += 1;
+			}
+			return numberOfApproved;
 		});
 		return (
 			<section className="applicant-dashboard">
-				<p>
-					Welcome to your Page, <b> {this.state.applicantData.fullName}</b>
-				</p>
-				<section
-					className={classnames('congrat-message', {
-						block: numberOfApproved === 5,
-						hidden: numberOfApproved !== 5,
-					})}>
-					<h4>CONGRATULATIONS!</h4>
+				<div className="container">
+					<h1 className="page-header"> YOUR PROFILE </h1>
 					<p>
-						You have finished the Application Process and now you are a part of
-						Code Your Future!
+						Welcome to your Page,{' '}
+						<span className="font-weight-bold">
+							{' '}
+							{this.state.applicantData.fullName}
+						</span>
+					</p>
+					<p className={numberOfApproved === 5 ? 'hidden' : 'block'}>
+						You’ll need to complete a 5 steps process before the course begins.
+						For every step we provided you an input field where you will paste
+						the link of the tutorial related to the step you have completed. You
+						will find more information about each step by clicking on each card.
 					</p>
 					<p>
-						The administrator will contact you soon via email with more details
-						about the future course
+						<b>
+							NB: You will not be allowed to submit an unrelated link in the
+							field provided. For example Khan Academy Basic tutorial link can only
+							be submitted in Khan Academy Basic tutorial.
+						</b>
 					</p>
-					<p> Good luck! </p>
-				</section>
-				<p className={numberOfApproved === 5 ? 'hidden' : 'block'}>
-					You’ll need to complete a 5 steps process before the course begins.
-					For every step we provided you an input field where you will paste the
-					link of the tutorial related to the step you have completed. You will
-					find more information about each step by clicking on their title.
-				</p>
-				<p>
-					<b>
-						NB: You will not be allow for example to submit a link related to
-						step 3 into input field related to step 4 .
-					</b>
-				</p>
-				<h2>Your Progress</h2>
-				{this.state.steps.map((step, i) => (
-					<DashboardStep
-						step={step}
-						addUrl={e => this.addUrlHandler(e, step.step)}
-						submit={e => this.submitUrlHandler(e, step.step)}
-						alert={step.alert}
-						key={i}
-						index={i}
-						progress={this.state.progress}
-						id={this.state.id}
-						directLink={step.directLink}
-					/>
-				))}
+					<section
+						className={classnames('congrat-message', {
+							block: numberOfApproved === 5,
+							hidden: numberOfApproved !== 5,
+						})}>
+						<h4>CONGRATULATIONS!</h4>
+						<p>
+							You have finished the Application Process and now you are a part
+							of Code Your Future!
+						</p>
+						<p>
+							The administrator will contact you soon via email with more
+							details about the future course
+						</p>
+						<p> Good luck! </p>
+					</section>
+
+					{this.state.steps.map((step, i) => (
+						<DashboardStep
+							step={step}
+							addUrl={e => this.addUrlHandler(e, step.step)}
+							submit={e => this.submitUrlHandler(e, step.step)}
+							alert={step.alert}
+							key={i}
+							index={i}
+							progress={this.state.progress}
+							id={this.state.id}
+							directLink={step.directLink}
+						/>
+					))}
+				</div>
 			</section>
 		);
 	}
