@@ -36,17 +36,17 @@ This application has been developed for mainly two types of users:
 
 ### Getting started
 
-* Fork the repo and go to the project folder in your terminal
+ Fork the repo and go to the project folder in your terminal
 
 #### FRONTEND
 
     cd frontend
 
-*  Install modules
+##### Install modules
 
     npm install
 
-* Start 
+##### Start 
 
     npm run start
 
@@ -54,23 +54,25 @@ This application has been developed for mainly two types of users:
 
     cd backend
 
-*  Install modules:
+##### Install modules:
 
     npm install
 
-* Run a database: 
+##### Run a database: 
 
     cd backend/database
     sqlite3 db.sqlite
 
-* Start 
+##### Start 
 
     cd backend
     npm run start
 
-* Open your browser
-	At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
-	At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
+##### Open your browser
+
+At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
+
+At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
 
 Reviews and comments are more than welcome! 
 
