@@ -1,27 +1,103 @@
-.progress-step {
+/* .progress-step {
 	border-top: 1px solid grey;
-}
+} */
 
 .btn-success {
-	margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .block {
-	display: block;
+  display: block;
 }
 
 .hidden {
-	display: hidden;
+  display: hidden;
 }
 
 .status-approved {
-	color: green;
+  color: green;
 }
 
 .status-submitted {
-	color: blue;
+  color: blue;
 }
 
 .status-rejected {
-	color: red;
+  color: red;
+}
+
+.ApplicantProgress {
+  font-size: 1rem;
+  margin-top: 60px;
+}
+fieldset.applicant-detail {
+  border: 1px solid #ddd;
+  margin: 0;
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+
+.applicant-detail legend {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+  width: 40%;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #3f3f3f;
+  color: white;
+  margin-left: 29%;
+}
+
+.progress-heading {
+  margin-top: 50px;
+  padding: 10px;
+  margin: 0;
+  padding: 20px 30px;
+}
+
+.panel-body {
+  padding-bottom: 15px;
+}
+
+.panel-body div > div {
+  padding: 5px 25px;
+}
+
+.show-steps {
+  background: #f5f5f5;
+  margin-top: 50px;
+  border: 1px solid #ddd;
+}
+
+.step-items {
+  border-bottom: 1px solid gray;
+  padding: 30px 20px;
+}
+
+.progress-step {
+  padding: 10px 10px 5px;
+}
+
+.approve-reject {
+  margin-top: 9px;
+  margin-left: 0;
+  padding: 10px 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .approve-reject {
+    display: block;
+    min-width: 100%;
+  
+  }
+  .approve-reject:first-child {
+    margin-top: 35px;
+  }
+
+  .approve-reject:last-child {
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
 }
