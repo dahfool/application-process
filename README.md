@@ -25,18 +25,20 @@ This application has been developed for mainly two types of users:
 
 
 ## Technologies used
- **Front-end:** - HTML, CSS, Bootstrap, JavaScript, React JS. 
- **Back-end:** - Node JS, Express, SQLite
+
+* **Front-end:** - HTML, CSS, Bootstrap, JavaScript, React JS. 
+
+* **Back-end:** - Node JS, Express, SQLite
 
  Link to the Trello: [`https://trello.com/b/dGYEbCNs/cyf-application-process-app)`](https://trello.com/b/dGYEbCNs/cyf-application-process-app)
 
-##Try it yourself
+## Try it yourself
 
-###Getting started
+### Getting started
 
 * Fork the repo and go to the project folder in your terminal
 
-####FRONTEND
+#### FRONTEND
 
 `cd frontend`
 
@@ -48,7 +50,7 @@ This application has been developed for mainly two types of users:
 
 	`npm run start`
 
-####BACKEND
+#### BACKEND
 
 `cd backend` 
 
