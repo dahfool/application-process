@@ -145,7 +145,7 @@ class ApplicantProgress extends React.Component {
           </div>
           <div className="steps">
             {helpers.stepsArray.map((step, i) => (
-              <div className="step-items">
+              <div className="step-items border-bottom border-left border-right">
                 <ApplicantStep
                   stepNumber={step.step}
                   details={step.details}
