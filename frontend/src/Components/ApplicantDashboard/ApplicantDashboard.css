@@ -75,6 +75,7 @@
 .applicant-dashboard  a {
 	text-decoration: none;
 }
+
 .applicant-dashboard .container :nth-child(6),
 .none {
 	display: none;

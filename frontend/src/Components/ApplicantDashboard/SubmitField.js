@@ -7,7 +7,6 @@ const submitField = props => {
 			<form onSubmit={props.submit} className="form-inline">
 				<div
 					className={classnames(
-						"form-group",
 						{hidden: props.status === 'Approved' || props.status === 'Submitted',
 						block: props.status === 'Rejected' || props.status === undefined,
 					})}>
