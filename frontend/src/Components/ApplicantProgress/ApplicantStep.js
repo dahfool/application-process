@@ -93,7 +93,7 @@ class ApplicantStep extends React.Component {
               </button>
               <button className="btn approve-reject btn-danger" onClick={this.handleReject}>
                 {' '}
-                Incomplete{' '}
+                Reject{' '}
               </button>
             </div>
           </div>
