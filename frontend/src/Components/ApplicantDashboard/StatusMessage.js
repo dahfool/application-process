@@ -18,7 +18,7 @@ const StatusMessage = ({ status, stepNumber }) => {
 					'msg-submitted': (status === 'Submitted'),
 					'msg-unsubmitted': (status === false)
 						})}
-					> {status ? status : 'Not submitted'}
+					> {status ? status : 'Not Submitted'}
 					</b>
 					<p className={status === 'Rejected' ? 'block' : 'hidden'}> Your work was rejected because it didn't meet all of the requirements. Please, contact Administrator <b>cyfapplicationprocess@gmail.com</b> to get the feedback, make some changes and re-submit the step! Good luck! </p>
 				</span>
