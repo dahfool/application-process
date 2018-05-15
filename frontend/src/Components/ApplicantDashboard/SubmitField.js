@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 const submitField = props => {
 	return (
-		<Fragment>
 			<form onSubmit={props.submit} className="form-inline">
 				<div
 					className={
@@ -23,14 +22,13 @@ const submitField = props => {
 						onChange={props.addUrl}
 					/>
 					<button className="btn btn-primary ml-3 btn-lg" type="submit">
-						Submit step
+						Submit
 					</button>
 					<small id="emailHelp" className="form-text">
 						{props.alert}
 					</small>
 				</div>
 			</form>
-		</Fragment>
 	);
 };
 
