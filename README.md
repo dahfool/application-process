@@ -38,11 +38,6 @@ This application has been developed for mainly two types of users:
 
  Fork the repo and go to the project folder in your terminal
 
-#### Database Schema
-
-![ER diagram](./docs/ER-Diagram.png)
-
-
 #### FRONTEND
 
     cd frontend
@@ -78,6 +73,10 @@ This application has been developed for mainly two types of users:
 At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
 
 At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
+
+#### Database Schema
+
+![ER diagram](./docs/ER-Diagram.png)
 
 Reviews and comments are more than welcome! 
 
