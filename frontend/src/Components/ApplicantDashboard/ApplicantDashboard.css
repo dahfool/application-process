@@ -1,6 +1,7 @@
 .applicant-dashboard,
-.single-step {
+.step-info {
 	font-size: 120%;
+	margin-bottom: 6rem;
 }
 
 .applicant-dashboard {margin-top: -20px;}
@@ -85,7 +86,8 @@
 	color: #212529;
 }
 
-.applicant-dashboard  a {
+.applicant-dashboard  a,
+.step-info a {
 	text-decoration: none;
 }
 
@@ -141,11 +143,19 @@ button.btn-go,
     border-radius: 48px;
 }
 
+li span a{
+	display: block;
+}
+
 @media screen and (max-width: 580px){
-	.applicant-dashboard {
+	.applicant-dashboard,
+	.step-info {
 		font-size: 100%;
 	}
 
+	.display-4 {
+		font-size: 1.5rem;
+	}
 	.applicant-dashboard a .card-step {
 		margin: .6rem !important;
 	}
@@ -160,5 +170,17 @@ button.btn-go,
 
 	.step-name {
 		padding: .8rem 0 0 .5rem !important;
+	}
+
+	.form-group {
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	button.btn {
+		margin-top: 1rem;
+		margin-left: 0!important;
 	}
 }
