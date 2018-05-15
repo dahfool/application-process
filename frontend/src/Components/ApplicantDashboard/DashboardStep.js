@@ -30,9 +30,10 @@ const DashboardStep = ({
 						<span className={classnames({
               'step-approved p-5': (status === 'Approved'),
               'step-submitted p-5': (status === 'Submitted'),
-              'step-number p-5' : (status == undefined || status === 'Rejected')
+              'step-rejected p-5': (status === 'Rejected'),
+              'step-number p-5' : (status === undefined )
               })}>{step.step}</span>
-						<div className='pt-4 pl-3 step-name'>
+						<div className='pt-5 pl-3 pb-2 step-name'>
 							<h4 className='card-title'>
 								<span className='title-color'> {step.details}</span>
 							</h4>

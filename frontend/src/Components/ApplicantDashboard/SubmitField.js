@@ -1,34 +1,32 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classnames from 'classnames';
 
 const submitField = props => {
 	return (
-			<form onSubmit={props.submit} className="form-inline">
-				<div
-					className={
-						"form-group",
-						classnames(
-						{hidden: props.status === 'Approved' || props.status === 'Submitted',
-						block: props.status === 'Rejected' || props.status === undefined,
-					})}>
-					<input
-						required
-						type="text"
-						placeholder="Add url here"
-						name="url"
-						className="form-control form-control-lg"
-                		placeholder="Paste your link here"
-						value={props.step.url}
-						onChange={props.addUrl}
-					/>
-					<button className="btn btn-primary ml-3 btn-lg" type="submit">
-						Submit
-					</button>
-					<small id="emailHelp" className="form-text">
-						{props.alert}
-					</small>
-				</div>
-			</form>
+		<Fragment>
+			{props.status === 'Submitted' || props.status === 'Approved' ? null : (
+				<form onSubmit={props.submit} className="form-inline pb-2 pt-3">
+					<div className={'form-group '}>
+						<input
+							required
+							type="text"
+							placeholder="Add url here"
+							name="url"
+							className="form-control form-control-lg"
+							placeholder="Paste your link here"
+							value={props.step.url}
+							onChange={props.addUrl}
+						/>
+						<button className="btn btn-primary ml-3 btn-lg" type="submit">
+							Submit
+						</button>
+					</div>
+				</form>
+			)}
+			<small id="emailHelp" className="form-text">
+				{props.alert}
+			</small>
+		</Fragment>
 	);
 };
 
