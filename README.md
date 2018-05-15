@@ -25,39 +25,54 @@ This application has been developed for mainly two types of users:
 
 
 ## Technologies used
- **Front-end:** - HTML, CSS, Bootstrap, JavaScript, React JS. 
- **Back-end:** - Node JS, Express, SQLite
+
+* **Front-end:** - HTML, CSS, Bootstrap, JavaScript, React JS. 
+
+* **Back-end:** - Node JS, Express, SQLite
 
  Link to the Trello: [`https://trello.com/b/dGYEbCNs/cyf-application-process-app)`](https://trello.com/b/dGYEbCNs/cyf-application-process-app)
 
-##Try it yourself
-Feel free to play around with our project! For this you will need to follow those steps:
+## Try it yourself
 
-* Fork the repo and go to the project folder in your terminal
+### Getting started
 
-*  Install modules for frontend: 
-	`cd frontend`
-	`npm install`
+ Fork the repo and go to the project folder in your terminal
 
-*  Install modules for backend: 
-	`cd backend` 
-	`npm install`
+#### FRONTEND
 
-* Run a database: 
- 	`cd backend/database`
-	`sqlite3 db.sqlite`
+    cd frontend
 
-* Run frontend: 
- 	`cd frontend`
-	`npm run start`
+##### Install modules
 
-* Run backend: 
- 	`cd backend`
-	`npm run start`
+    npm install
 
-* Open your browser
-	At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
-	At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
+##### Start 
+
+    npm run start
+
+#### BACKEND
+
+    cd backend
+
+##### Install modules:
+
+    npm install
+
+##### Run a database: 
+
+    cd backend/database
+    sqlite3 db.sqlite
+
+##### Start 
+
+    cd backend
+    npm run start
+
+##### Open your browser
+
+At `http://localhost:3000/` you can explore the Applicant journey (fill the form and get the link to dashboard)
+
+At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
 
 Reviews and comments are more than welcome! 
 

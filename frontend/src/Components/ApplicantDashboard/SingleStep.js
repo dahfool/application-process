@@ -163,9 +163,7 @@ class SingleStep extends Component {
 					step={this.state.step}
 					submit={this.submitUrlHandler}
 					alert={this.state.step.alert}
-					progress={this.state.progress}
 					status={status}
-					directLink={this.state.step.directLink}
 				/>
 				<StatusMessage
 					status={status}
