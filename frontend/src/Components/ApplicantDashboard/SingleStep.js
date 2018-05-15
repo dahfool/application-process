@@ -84,18 +84,18 @@ class SingleStep extends Component {
 				return status;
 			});
 		}
+		console.log(this.state.progress);
+		
 		return (
 			<Fragment>
-				<div className="card">
-					<div className="card-head" />
-					<div className="card-title ">
-						<Link to={`/applicant-dashboard/${this.state.id}`}>
-							<div className="card-dashboard">
-								<h4> My Dashboard </h4>
-							</div>
-						</Link>
-						<h3>{this.state.step.details}</h3>
-					</div>
+				<div className="card-head"></div>
+				<div className="jumbotron jumbotron-fluid single-step mt-4">
+					<h3 className='display-4 p-3'>{this.state.step.details}</h3>
+					<p class="lead pl-3">
+					<Link to={`/applicant-dashboard/${this.state.id}`}>
+						<button class="btn btn-primary btn-lg btn-go">Go to your profile</button>
+					</Link>	
+					</p>
 				</div>
 				<div className="step-overview">
 					<p> Overview </p>

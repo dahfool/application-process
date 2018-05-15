@@ -4,13 +4,11 @@ import classnames from 'classnames';
 const submitField = props => {
 	return (
 		<Fragment>
-			<form onSubmit={props.submit} className="form-inline">
-				<div
-					className={classnames(
-						"form-group",
-						{hidden: props.status === 'Approved' || props.status === 'Submitted',
-						block: props.status === 'Rejected' || props.status === undefined,
-					})}>
+		{props.status === 'Submitted' ? null :<form onSubmit={props.submit} className="form-inline">
+				 <div
+					className={
+						"form-group"
+						}>
 					<input
 						required
 						type="text"
@@ -22,14 +20,14 @@ const submitField = props => {
 						onChange={props.addUrl}
 					/>
 					<button className="btn btn-primary ml-3 btn-lg" type="submit">
-						Submit step
+						Submit
 					</button>
 					<small id="emailHelp" className="form-text">
 						{props.alert}
 					</small>
 				</div>
-			</form>
-		</Fragment>
+			</form>}
+			</Fragment>
 	);
 };
 
