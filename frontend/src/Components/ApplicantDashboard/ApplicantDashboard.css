@@ -1,21 +1,27 @@
-.applicant-dashboard {
-	font-size: 1rem;
+.applicant-dashboard,
+.single-step {
+	font-size: 120%;
 }
+
+.applicant-dashboard {margin-top: -20px;}
 
 .msg-approved {
 	color: green;
+}
+
+.step-approved {
+	background:  green;
 }
 
 .msg-submitted {
 	color: blue;
 }
 
-.msg-rejected {
-	color: red;
+.step-submitted {
+	background:  blue;
 }
-
-.dashboard-step {
-	margin-bottom: 1rem;
+.msg-rejected {
+	color: #EF9B0F;
 }
 
 .submit-url .form-text {
@@ -41,44 +47,7 @@
 	margin-bottom: -22px;
 	font-size: 1.5rem;
 }
-.card-head {
-	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
-	height: 10px;
-}
 
-.card-dashboard {
-	height: 72px;
-    background: #bbb;
-    line-height: 2rem;
-	padding: 0 10px;
-	margin-top: 10px;
-    margin-left: 10px;
-}
-
-.card-dashboard h4 {
-	text-align: center;
-    line-height: 4rem;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.card-title {
-	display: flex;
-	align-items: center;
-}
-
-.card-title h3 {
-	padding-left: 45px;
-    line-height: 65px;
-}
-
-.dashboard-name {
-	display: flex;
-}
-
-.dashboard-step a:hover {
-	text-decoration: none;
-}
 .congrat-message {
 	padding-top: 0.5rem;
 	margin-bottom: 1rem;
@@ -87,6 +56,101 @@
 	background-color: #e4ffe3;
 }
 
-.card-step a{
+.card-step {
+	position: relative;
+	box-shadow: 1px 0px 11px 0px rgba(46,61,73,.2);
+    border-radius: .375rem;
+    -webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.applicant-dashboard a {
+	display: block;
+	transition: color .3s ease
+}
+
+.card-step:hover {
+	box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+}
+
+.applicant-dashboard  a{
 	color: #212529;
+}
+
+.applicant-dashboard  a {
+	text-decoration: none;
+}
+
+.applicant-dashboard .container :nth-child(6),
+.none {
+	display: none;
+}
+
+.step-title {
+	display: flex;
+	flex-direction: row;
+}
+
+.title-color {
+    text-transform: uppercase;
+}
+
+.step-number {
+    background: #d33a3a;
+}
+
+.step-approved,
+.step-number,
+.step-submitted{
+	font-weight: 700;
+    color: #fff;
+	position: relative;
+    font-size: 110%;
+}
+
+.step-name {
+	width: 100%;
+}
+
+/* SINGLE STEP */
+
+.single-step {
+	border-radius: 0;
+	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.4);
+	background: transparent;
+}
+
+.card-head{
+	content: "";
+	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
+    height: 15px;
+    position: relative;
+    top: 33px;
+}
+
+button.btn-go,
+.btn-go:hover {
+    border-radius: 48px;
+}
+
+@media screen and (max-width: 580px){
+	.applicant-dashboard {
+		font-size: 100%;
+	}
+
+	.applicant-dashboard a .card-step {
+		margin: .6rem !important;
+	}
+
+	.card-step {
+		border-radius: 0;
+	}
+
+	.step-title span {
+		font-size: 90%;
+	}
+
+	.step-name {
+		padding: .8rem 0 0 .5rem !important;
+	}
 }
