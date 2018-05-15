@@ -5,12 +5,22 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "fake-data": "node database/script.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3"
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.4",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "madoka": "^1.1.2",
+    "nodemon": "^1.17.3"
   }
 }

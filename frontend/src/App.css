@@ -1,32 +1,13 @@
-
-.App {
-  font-size: 1.5em;
-}
-/* .App {
-  text-align: center;
+html, body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+button.btn {
+    border-radius: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.page-header {
+   font-size: 2rem; 
+   text-align: center;
+   padding-top: 40px;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
