@@ -4,7 +4,7 @@ import classnames from 'classnames';
 const submitField = props => {
 	return (
 		<Fragment>
-			{props.status === 'Submitted' ? null : (
+			{props.status === 'Submitted' || props.status === 'Approved' ? null : (
 				<form onSubmit={props.submit} className="form-inline pb-2 pt-3">
 					<div className={'form-group '}>
 						<input
