@@ -1,9 +1,13 @@
 .applicant-dashboard,
 .step-info {
-	font-size: 120%;
+	font-size: 116%;
 	margin-bottom: 6rem;
 }
 
+.step-info b,
+.applicant-dashboard b{
+	padding-left: 10px
+  }
 .applicant-dashboard {margin-top: -20px;}
 
 .msg-approved {
@@ -21,6 +25,11 @@
 .step-submitted {
 	background:  blue;
 }
+
+.step-rejected {
+	background: #EF9B0F;
+}
+
 .msg-rejected {
 	color: #EF9B0F;
 }
@@ -60,8 +69,6 @@
 .card-step {
 	position: relative;
 	box-shadow: 1px 0px 11px 0px rgba(46,61,73,.2);
-    border-radius: .375rem;
-    -webkit-transition: all .3s ease;
 	transition: all .3s ease;
 }
 
@@ -111,7 +118,7 @@
 
 .step-approved,
 .step-number,
-.step-submitted{
+.step-submitted, .step-rejected{
 	font-weight: 700;
     color: #fff;
 	position: relative;
