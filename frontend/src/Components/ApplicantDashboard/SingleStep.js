@@ -86,15 +86,15 @@ class SingleStep extends Component {
 		}
 		return (
 			<Fragment>
-				<div className="card">
+				<div className="card mt-5">
 					<div className="card-head" />
 					<div className="card-title ">
 						<Link to={`/applicant-dashboard/${this.state.id}`}>
 							<div className="card-dashboard">
-								<h4> My Dashboard </h4>
+								<h4> Go to your profile </h4>
 							</div>
 						</Link>
-						<h3>{this.state.step.details}</h3>
+						<h3 className="page-header">{this.state.step.details}</h3>
 					</div>
 				</div>
 				<div className="step-overview">
@@ -163,9 +163,7 @@ class SingleStep extends Component {
 					step={this.state.step}
 					submit={this.submitUrlHandler}
 					alert={this.state.step.alert}
-					progress={this.state.progress}
 					status={status}
-					directLink={this.state.step.directLink}
 				/>
 				<StatusMessage
 					status={status}

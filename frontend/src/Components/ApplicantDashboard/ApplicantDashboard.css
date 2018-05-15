@@ -7,10 +7,17 @@
 	color: green;
 }
 
+.step-approved {
+	background:  green;
+}
+
 .msg-submitted {
 	color: blue;
 }
 
+.step-submitted {
+	background:  blue;
+}
 .msg-rejected {
 	color: red;
 }
@@ -91,12 +98,16 @@
 }
 
 .step-number {
-	position: relative;
-	position: relative;
     background: #d33a3a;
-    font-weight: 700;
-	color: #fff;
-	font-size: 150%;
+}
+
+.step-approved,
+.step-number,
+.step-submitted{
+	font-weight: 700;
+    color: #fff;
+	position: relative;
+    font-size: 110%;
 }
 
 .step-name {
@@ -105,10 +116,22 @@
 
 @media screen and (max-width: 580px){
 	.applicant-dashboard {
-		font-size: 109%;
+		font-size: 100%;
 	}
 
-	.applicant-dashboard .container a .card-step {
+	.applicant-dashboard a .card-step {
 		margin: .6rem !important;
+	}
+
+	.card-step {
+		border-radius: 0;
+	}
+
+	.step-title span {
+		font-size: 90%;
+	}
+
+	.step-name {
+		padding: .8rem 0 0 .5rem !important;
 	}
 }
