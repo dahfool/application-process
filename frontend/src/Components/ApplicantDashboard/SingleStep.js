@@ -84,91 +84,100 @@ class SingleStep extends Component {
 				return status;
 			});
 		}
-		console.log(this.state.progress);
-		
+
 		return (
 			<Fragment>
-				<div className="card-head"></div>
-				<div className="jumbotron jumbotron-fluid single-step mt-4">
-					<h3 className='display-4 p-3'>{this.state.step.details}</h3>
-					<p class="lead pl-3">
-					<Link to={`/applicant-dashboard/${this.state.id}`}>
-						<button class="btn btn-primary btn-lg btn-go">Go to your profile</button>
-					</Link>	
-					</p>
-				</div>
-				<div className="step-overview">
-					<p> Overview </p>
-				</div>
-				{this.state.step.step <= 3 && (
-					<div>
-						<p>
-							We recommand you to read and follow these instructions before you
-							start the tutorial:
+				<div className="step-info">
+					<div className="card-head" />
+					<div className="jumbotron jumbotron-fluid single-step mt-4">
+						<h3 className="display-4 p-3">{this.state.step.details}</h3>
+						<p class="lead pl-3">
+							<Link to={`/applicant-dashboard/${this.state.id}`}>
+								<button class="btn btn-primary btn-lg btn-go">
+									Go to your profile
+								</button>
+							</Link>
 						</p>
-						<ul>
-								{this.state.step.processus}:
-								{this.state.step.directLink.map( (link, index) => (
-									<li key={index}>
-										<a href={link} target="_blank">
-											Clik here to access
+					</div>
+					<div className="step-overview">
+						<p className="pt-3"> Overview </p>
+					</div>
+					{this.state.step.step <= 3 && (
+						<div>
+							<p className="pt-3">
+								We recommand you to read and follow these instructions before
+								you start the tutorial:
+							</p>
+							<ul>
+								<li>
+									{this.state.step.processus}:
+									{this.state.step.directLink.map((link, index) => (
+										<span key={index}>
+											<a href={link} target="_blank">
+												Clik here to access
+											</a>
+										</span>
+									))}
+								</li>
+								<li>
+									Make sure you are login anytime you complete the tutorial
+								</li>
+								<li>
+									Make sure you have done all parts of the tutorial before you
+									submit your link
+								</li>
+								<li> Copy the link once you have complete all parts </li>
+								<li>
+									Paste the link on the provided area related to the tutoriel
+									you have completed
+								</li>
+								{this.state.step.step === 2 && <p className="font-weight-bold"> For this step you will need to complete both tutorial and then submit the link</p>}
+							</ul>
+						</div>
+					)}
+					{this.state.step.step > 3 && (
+						<div className='pt-2'>
+							{this.state.step.step === 4 && (
+								<p>This step require you to build you own page.</p>
+							)}
+							{this.state.step.step === 5 && (
+								<p>This step require you to improve your Tribute Page.</p>
+							)}
+							{this.state.step.step === 4 && (
+								<ul>
+									<li>
+										Complete the ‘Tribute page’ challenge
+										<a href={this.state.step.directLink} target="_blank" className='p-2'>
+											here
 										</a>
 									</li>
-								))}
-							<li>
-								Make sure you are login anytime you complete the tutorial
-							</li>
-							<li>
-								Make sure you have done all parts of the tutorial before you
-								submit your link
-							</li>
-							<li> Copy the link once you have complete all parts </li>
-							<li>
-								Paste the link on the provided area related to the tutoriel you
-								have completed
-							</li>
-						</ul>
-					</div>
-				)}
-				{this.state.step.step > 3 && (
-					<div>
-						{this.state.step.step === 4 && (
-							<p>This step require you to build you own page.</p>
-						)}
-						{this.state.step.step === 5 && (
-							<p>This step require you to improve your Tribute Page.</p>
-						)}
-						{this.state.step.step === 4 && (
-							<ul>
-								<li>
-									Complete the ‘Tribute page’ challenge 
-									  <a href={this.state.step.directLink} target="_blank"> here </a>
-								</li>
-								<li> {this.state.step.processus}</li>
-							</ul>
-						)}
-						{this.state.step.step === 5 && (
-							<ul>
-								<li>
-									Add the Best Practices described as described
-									<a href={this.state.step.directLink} target="_blank">	here	</a>
-								</li>
-							</ul>
-						)}
-					</div>
-				)}
-				<p className={status ? 'hidden' : 'block'}> Paste your link below </p>
-				<SubmitField
-					addUrl={this.addUrlHandler}
-					step={this.state.step}
-					submit={this.submitUrlHandler}
-					alert={this.state.step.alert}
-					status={status}
-				/>
-				<StatusMessage
-					status={status}
-					stepNumber={this.props.match.params.stepnumber}
-				/>
+									<li> {this.state.step.processus}</li>
+								</ul>
+							)}
+							{this.state.step.step === 5 && (
+								<ul>
+									<li>
+										Add the Best Practices described as described
+										<a href={this.state.step.directLink} target="_blank" className='p-2'>
+											here
+										</a>
+									</li>
+								</ul>
+							)}
+						</div>
+					)}
+					<SubmitField
+						addUrl={this.addUrlHandler}
+						step={this.state.step}
+						submit={this.submitUrlHandler}
+						alert={this.state.step.alert}
+						status={status}
+					/>
+					<StatusMessage
+						status={status}
+						stepNumber={this.props.match.params.stepnumber}
+					/>
+				</div>
 			</Fragment>
 		);
 	}
