@@ -38,6 +38,11 @@ This application has been developed for mainly two types of users:
 
  Fork the repo and go to the project folder in your terminal
 
+#### Database Schema
+
+![ER diagram](./docs/ER-Diagram.png)
+
+
 #### FRONTEND
 
     cd frontend
