@@ -2,6 +2,9 @@
 .step-info {
 	font-size: 116%;
 	margin-bottom: 6rem;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
 }
 
 .step-info b,
@@ -171,6 +174,10 @@ li span a{
 		border-radius: 0;
 	}
 
+	.block {
+		font-size: 105%;
+	}
+	
 	.step-title span {
 		font-size: 90%;
 	}
