@@ -29,10 +29,10 @@ const StatusMessage = ({ status, stepNumber }) => {
 					})}>
 					{status ? statusMsg : 'Not submitted'}
 				</b>
-				<p className={status === 'Rejected' ? 'block' : 'hidden'}>
+				<div className={status === 'Rejected' ? 'block p-3' : 'hidden'}>
 					Oops! Seems like your work didn't meet all of the requirements. But
 					don't worry!
-					<ul>
+					<ul className='p-1'>
 						<li> Make sure you submitted the right link </li>
 						<li>
 							Double check if you did all of the required thing for the step
@@ -41,7 +41,7 @@ const StatusMessage = ({ status, stepNumber }) => {
 					</ul>
 					If you are still not sure, feel free to contact Administrator
 					<b>cyfapplicationprocess@gmail.com</b>. Good luck!
-				</p>
+				</div>
 			</span>
 		);
 	}

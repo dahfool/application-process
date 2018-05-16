@@ -44,6 +44,7 @@ class ApplicantStep extends React.Component {
           link = step.url;
           status = step.step_status;
         }
+        return status
       });
     }
 

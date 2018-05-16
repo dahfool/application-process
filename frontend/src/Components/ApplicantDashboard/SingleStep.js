@@ -91,9 +91,9 @@ class SingleStep extends Component {
 					<div className="card-head" />
 					<div className="jumbotron jumbotron-fluid single-step mt-4">
 						<h3 className="display-4 p-3">{this.state.step.details}</h3>
-						<p class="lead pl-3">
+						<p className="lead pl-3">
 							<Link to={`/applicant-dashboard/${this.state.id}`}>
-								<button class="btn btn-primary btn-lg btn-go">
+								<button className="btn btn-primary btn-lg btn-go">
 									Go to your profile
 								</button>
 							</Link>
