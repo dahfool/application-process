@@ -1,7 +1,14 @@
-.applicant-dashboard {
-	font-size: 120%;
-    margin-top: -20px;
+.applicant-dashboard,
+.step-info {
+	font-size: 116%;
+	margin-bottom: 6rem;
 }
+
+.step-info b,
+.applicant-dashboard b{
+	padding-left: 10px
+  }
+.applicant-dashboard {margin-top: -20px;}
 
 .msg-approved {
 	color: green;
@@ -18,6 +25,11 @@
 .step-submitted {
 	background:  blue;
 }
+
+.step-rejected {
+	background: #EF9B0F;
+}
+
 .msg-rejected {
 	color: #EF9B0F;
 }
@@ -45,10 +57,6 @@
 	margin-bottom: -22px;
 	font-size: 1.5rem;
 }
-.card-head {
-	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
-	height: 10px;
-}
 
 .congrat-message {
 	padding-top: 0.5rem;
@@ -61,9 +69,15 @@
 .card-step {
 	position: relative;
 	box-shadow: 1px 0px 11px 0px rgba(46,61,73,.2);
-    border-radius: .375rem;
-    -webkit-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+.congrat-message {
+	padding-top: 0.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	border: 2px solid green;
+	background-color: #e4ffe3;
 }
 
 .applicant-dashboard a {
@@ -79,7 +93,8 @@
 	color: #212529;
 }
 
-.applicant-dashboard  a {
+.applicant-dashboard  a,
+.step-info a {
 	text-decoration: none;
 }
 
@@ -103,7 +118,7 @@
 
 .step-approved,
 .step-number,
-.step-submitted{
+.step-submitted, .step-rejected{
 	font-weight: 700;
     color: #fff;
 	position: relative;
@@ -114,11 +129,40 @@
 	width: 100%;
 }
 
+/* SINGLE STEP */
+
+.single-step {
+	border-radius: 0;
+	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.4);
+	background: transparent;
+}
+
+.card-head{
+	content: "";
+	background: linear-gradient(129deg, #D12F2F 7%, #262626 97%);
+    height: 15px;
+    position: relative;
+    top: 33px;
+}
+
+button.btn-go,
+.btn-go:hover {
+    border-radius: 48px;
+}
+
+li span a{
+	display: block;
+}
+
 @media screen and (max-width: 580px){
-	.applicant-dashboard {
+	.applicant-dashboard,
+	.step-info {
 		font-size: 100%;
 	}
 
+	.display-4 {
+		font-size: 1.5rem;
+	}
 	.applicant-dashboard a .card-step {
 		margin: .6rem !important;
 	}
@@ -133,5 +177,17 @@
 
 	.step-name {
 		padding: .8rem 0 0 .5rem !important;
+	}
+
+	.form-group {
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	button.btn {
+		margin-top: 1rem;
+		margin-left: 0!important;
 	}
 }

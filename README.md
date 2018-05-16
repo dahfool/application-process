@@ -74,5 +74,9 @@ At `http://localhost:3000/` you can explore the Applicant journey (fill the form
 
 At `http://localhost:3000/applicants` you can go through the Admin journey (check applicant details, review progress, approve or reject changes)
 
+#### Database Schema
+
+![ER diagram](./docs/ER-Diagram.png)
+
 Reviews and comments are more than welcome! 
 
