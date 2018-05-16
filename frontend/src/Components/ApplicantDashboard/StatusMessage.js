@@ -29,7 +29,7 @@ const StatusMessage = ({ status, stepNumber }) => {
 					})}>
 					{status ? statusMsg : 'Not submitted'}
 				</b>
-				<p className={status === 'Rejected' ? 'block p-3' : 'hidden'}>
+				<div className={status === 'Rejected' ? 'block p-3' : 'hidden'}>
 					Oops! Seems like your work didn't meet all of the requirements. But
 					don't worry!
 					<ul className='p-1'>
@@ -41,7 +41,7 @@ const StatusMessage = ({ status, stepNumber }) => {
 					</ul>
 					If you are still not sure, feel free to contact Administrator
 					<b>cyfapplicationprocess@gmail.com</b>. Good luck!
-				</p>
+				</div>
 			</span>
 		);
 	}

@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import classnames from 'classnames';
 
 const submitField = props => {
 	return (
@@ -10,7 +9,6 @@ const submitField = props => {
 						<input
 							required
 							type="text"
-							placeholder="Add url here"
 							name="url"
 							className="form-control form-control-lg"
 							placeholder="Paste your link here"
